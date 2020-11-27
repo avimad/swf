@@ -9,7 +9,7 @@
 	{
 		"problem_title": "<span class='space-10'></span>",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "In this section, you will simulate a 50-meter race between a tortoise and a hare by adjusting the speed of each animal. You will also observe the distance-time graph of each animal and interpret the graphs.<br> Set the <strong>Tortoise: head start, in meters </strong>slider to 4, the <strong>Tortoise average speed, in meters per second </strong> (m/s) slider to 8, and the <strong>Hare: average speed, in meters per second </strong> slider to 10. <br> The hare begins the race at the starting line and the tortoise has a head start of 4m. If the distance from the hare to the finish line is 50m, how far is the tortoise from the finish line? <br> <input type='text'></input> m <br> If the tortoise runs 8 m in 1 s, how long will it take to reach the finish line? <input type='text'></input> s <br> If the hare runs 10 m in 1 s, how long will it take to reach the finish line? <input type='text'></input> s",
+		"stage_content": "In this section, you will simulate a 50-meter race between a tortoise and a hare by adjusting the speed of each animal. You will also observe the distance-time graph of each animal and interpret the graphs.<br> Set the <strong>Tortoise: head start, in meters </strong>slider to 4, the <strong>Tortoise average speed, in meters per second </strong> (m/s) slider to 8, and the <strong>Hare: average speed, in meters per second </strong> slider to 10. <br> The hare begins the race at the starting line and the tortoise has a head start of 4m. If the distance from the hare to the finish line is 50m, how far is the tortoise from the finish line? <br> <input id=\"text\" type=\"text\"/></input> m <br> If the tortoise runs 8 m in 1 s, how long will it take to reach the finish line? <br> <input type=\"text\"></input> s <br> If the hare runs 10 m in 1 s, how long will it take to reach the finish line? <br><input type=\"text\"></input> s <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -17,7 +17,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "If the tortoise has a head start of 4 m and is moving at a speed of 8 m/s and the hare is moving at a speed of 10 m/s, will the hare be able to catch up and overtake the tortoise before the finish line? <br> <input type='text'></input> <br> If the hare does catch up to the tortoise, how many meters before the finish line will this happen? Click the <strong>Simulate</strong> button to verify your answer. <input type='text'></input> m",
+		"stage_content": "If the tortoise has a head start of 4 m and is moving at a speed of 8 m/s and the hare is moving at a speed of 10 m/s, will the hare be able to catch up and overtake the tortoise before the finish line? <br> <input type=\"text\"></input> <br> If the hare does catch up to the tortoise, how many meters before the finish line will this happen? Click the <strong>Simulate</strong> button to verify your answer. <br> <input type=\"text\"></input> m <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -25,7 +25,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Do not make any change in the settings. Observe the graph.<br> What is plotted on the x-axis? <br> <input type='text'></input> <br> What is plotted on the y-axis? <br> <input type='text'> <br> What does the shape of each graph tell you about the speed of the hare and the tortoise? <br> <input type='text'></input> <br>",
+		"stage_content": "Do not make any change in the settings. Observe the graph.<br> What is plotted on the x-axis? <br> <input type=\"text\"></input> <br> What is plotted on the y-axis? <br> <input type=\"text\"> <br> What does the shape of each graph tell you about the speed of the hare and the tortoise? <br> <input type=\"text\"></input> <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -33,7 +33,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Now, click the <strong>Reset</strong> button to reset the positions of the tortoise and the hare and reduce the speed of the hare to 9 m/s by using the slider or by typing in the value in the input box. <br> Will the hare overtake the tortoise before the finish line under these conditions? Verify your answer by clicking the <strong>Simulate</strong> button. <br> <input type='text'><input><br>",
+		"stage_content": "Now, click the <strong>Reset</strong> button to reset the positions of the tortoise and the hare and reduce the speed of the hare to 9 m/s by using the slider or by typing in the value in the input box. <br> Will the hare overtake the tortoise before the finish line under these conditions? Verify your answer by clicking the <strong>Simulate</strong> button. <br> <input type=\"text\"></input><br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -41,7 +41,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Now, click the <strong>Reset</strong> button and increase the speed of the hare to 11 m/s by dragging the knob of the <strong>Hare: average speed, in meters per second</strong> slider or by typing the values in the input box. Will the hare overtake the tortoise before the finish line under these conditions? Verfiy your answer by clicking the <strong>Simulate</strong> button. <br> <input type='text'><input><br>",
+		"stage_content": "Now, click the <strong>Reset</strong> button and increase the speed of the hare to 11 m/s by dragging the knob of the <strong>Hare: average speed, in meters per second</strong> slider or by typing the values in the input box. Will the hare overtake the tortoise before the finish line under these conditions? Verfiy your answer by clicking the <strong>Simulate</strong> button. <br> <input type=\"text\"></input><br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -49,7 +49,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Now, set the hare's speed to 1 m/s then slowly increase the speed of the hare by dragging the slider to the right. Observe the distance-time graph of the hare. <br> Does the line representing the hare move towards the line for the tortoise or away from it as the speed of the hare is increased? <br> <input type='text></input> <br> Does the chance of overtaking the tortoise before the finish line increase or decrease as the speed of the hare increases? <br> <input type=''></input> <br>",
+		"stage_content": "Now, set the hare's speed to 1 m/s then slowly increase the speed of the hare by dragging the slider to the right. Observe the distance-time graph of the hare. <br> Does the line representing the hare move towards the line for the tortoise or away from it as the speed of the hare is increased? <br> <input type=\"text\"></input> <br> Does the chance of overtaking the tortoise before the finish line increase or decrease as the speed of the hare increases? <br> <input type=\"text\"></input> <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -57,7 +57,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Set the hare's speed to 10 m/s. Now, change the head start of tortoise to 1 m and slowly increase the tortoise's head start by moving the slider to the right. Observe the graph distance-time graph of the tortoise. <br> Does the line representing the tortoise move away from the line representing the hare or towards it? <br> <input type='text></input> <br> Does the chance of the tortoise reaching the finish line before the hare increase or decrease as the head start of the tortoise increases?<br> <input type='text></input> <br> ",
+		"stage_content": "Set the hare's speed to 10 m/s. Now, change the head start of tortoise to 1 m and slowly increase the tortoise's head start by moving the slider to the right. Observe the graph distance-time graph of the tortoise. <br> Does the line representing the tortoise move away from the line representing the hare or towards it? <br> <input type=\"text\"></input> <br> Does the chance of the tortoise reaching the finish line before the hare increase or decrease as the head start of the tortoise increases?<br> <input type=\"text\"></input> <br> ",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -65,7 +65,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Set the <strong>Tortoise: head start, in meters </strong> slider to 3, the <strong>Tortoise: average speed, in meters per second</strong> slider to 7, and the <strong> Hare: average speed, in meters per second</strong> slider to 9. Click the <strong>Table</strong> tab. The table displays the distance covered by the hare and the tortoise at every tenth second. <br> How far does the tortoise run between 0.8 s and 0.9 s? <br> <input type='text></input> m <br> How far does the tortoise run between 0.9 s and 1.0 s? <br> <input type='text></input> m <br> Is the speed of the tortoise varied or is it constant? <br> <input type='text></input> <br>",
+		"stage_content": "Set the <strong>Tortoise: head start, in meters </strong> slider to 3, the <strong>Tortoise: average speed, in meters per second</strong> slider to 7, and the <strong> Hare: average speed, in meters per second</strong> slider to 9. Click the <strong>Table</strong> tab. The table displays the distance covered by the hare and the tortoise at every tenth second. <br> How far does the tortoise run between 0.8 s and 0.9 s? <br> <input type=\"text\"></input> m <br> How far does the tortoise run between 0.9 s and 1.0 s? <br> <input type=\"text\"></input> m <br> Is the speed of the tortoise varied or is it constant? <br> <input type=\"text\"></input> <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []
@@ -73,7 +73,7 @@
 	{
 		"problem_title": "",
 		"stage_title": "Representing Data Using Graphs and Tables",
-		"stage_content": "Now, select the <strong>Controls</strong> tab. Set the speed of the tortoise to 10 m/s. Make sure that the head start of the tortoise is 3 m  and the speed of the hare is 10 m/s. Click the <strong>Simulate</strong> button. Does the hare overtake the tortoise before the finish line? <br> <input type='text></input> <br> What is the minimum speed of the hare that is necessary to ensure that it will overtake the tortoise before the finish line? Verify your answer by changing the speed of the hare using the slider. <br> <input type='text></input> m/s <br> What part of the graph indicates that the hare catches up with the tortoise?<br> <input type='text></input> <br>",
+		"stage_content": "Now, select the <strong>Controls</strong> tab. Set the speed of the tortoise to 10 m/s. Make sure that the head start of the tortoise is 3 m  and the speed of the hare is 10 m/s. Click the <strong>Simulate</strong> button. Does the hare overtake the tortoise before the finish line? <br> <input type=\"text\"></input> <br> What is the minimum speed of the hare that is necessary to ensure that it will overtake the tortoise before the finish line? Verify your answer by changing the speed of the hare using the slider. <br> <input type=\"text\"></input> m/s <br> What part of the graph indicates that the hare catches up with the tortoise?<br> <input type=\"text\"></input> <br>",
 		"button_top_text": "Click <strong>Next</strong> to continue.",
 		"button_text": "Next",
 		"opratingButtons": []

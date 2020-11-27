@@ -1,43 +1,22 @@
 <!-- Header -->
-
 <div class="content-sec">
   <div class="container">
     <div class="left-bar">
       <div class="sec-bar">
         <p>
           Section:
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="i == 0 ? 'yellow' : ''"
-            class="fa fa-home"
-            aria-hidden="true"
-          ></i>
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="i == 1 ? 'yellow' : ''"
-            aria-hidden="true"
-            >|</i
-          >
-          <i
-            (click)="getStep2Data()"
-            [ngClass]="i == 2 ? 'yellow' : ''"
-            aria-hidden="true"
-            >||</i
-          >
+          <i (click)="getStep1Data()" [ngClass]="i == 0 ? 'yellow' : ''" class="fa fa-home" aria-hidden="true"></i>
+          <i (click)="getStep1Data()" [ngClass]="i == 1 ? 'yellow' : ''" aria-hidden="true">|</i>
+          <i (click)="getStep2Data()" [ngClass]="i == 2 ? 'yellow' : ''" aria-hidden="true">||</i>
         </p>
       </div>
       <div class="question-sec">
         <img src="assets/arrow.png" />
         <p>Question:</p>
-        <i
-          (click)="nextPageData(k + 1)"
-          [ngClass]="i == k + 1 ? 'yellow' : ''"
-          *ngFor="
+        <i (click)="nextPageData(k + 1)" [ngClass]="i == k + 1 ? 'yellow' : ''" *ngFor="
             let d of dataStep1 | slice: 1:dataStep1.length - 1;
             let k = index
-          "
-          >{{ k + 1 }}</i
-        >
+          ">{{ k + 1 }}</i>
 
         <a (click)="prevData()" class="previous round">&#8249;</a>
         <a (click)="nextData()" class="next round">&#8250;</a>
@@ -66,28 +45,10 @@
             <div class="icon-sec">
               <img src="assets/tortoise.png" />
             </div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="50"
-              step=".1"
-              class="slider"
-              (change)="t1Change()"
-              id="myRange"
-              [(ngModel)]="T1"
-            />
-            <input
-              min="1"
-              max="100"
-              step=".1"
-              class="input-text"
-              type="number"
-              name="T1"
-              id="T1"
-              (change)="t1Change()"
-              [(ngModel)]="T1"
-            />
+            <input type="range" min="1" max="100" value="50" step=".1" class="slider" (change)="t1Change()" id="myRange"
+              [(ngModel)]="T1" />
+            <input min="1" max="100" step=".1" class="input-text" type="number" name="T1" id="T1" (change)="t1Change()"
+              [(ngModel)]="T1" />
             <!-- <span id="f" style="font-weight: bold; color: red">{{ T1 }}</span> -->
           </div>
           <div class="slidecontainer">
@@ -95,28 +56,10 @@
             <div class="icon-sec">
               <img src="assets/tortoise.png" />
             </div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="50"
-              step=".1"
-              class="slider"
-              id="myRange"
-              (change)="t1Change()"
-              [(ngModel)]="T2"
-            />
-            <input
-              min="1"
-              max="100"
-              step=".1"
-              class="input-text"
-              type="number"
-              name="T2"
-              id="T2"
-              (change)="t1Change()"
-              [(ngModel)]="T2"
-            />
+            <input type="range" min="1" max="100" value="50" step=".1" class="slider" id="myRange" (change)="t1Change()"
+              [(ngModel)]="T2" />
+            <input min="1" max="100" step=".1" class="input-text" type="number" name="T2" id="T2" (change)="t1Change()"
+              [(ngModel)]="T2" />
             <!-- <span id="f" style="font-weight: bold; color: red">{{ T2 }}</span> -->
           </div>
         </div>
@@ -127,28 +70,10 @@
             <div class="icon-sec">
               <img src="assets/rabbit-shape.png" />
             </div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="40"
-              class="slider"
-              step=".1"
-              id="myRange"
-              (change)="t1Change()"
-              [(ngModel)]="H1"
-            />
-            <input
-              min="1"
-              max="100"
-              step=".1"
-              class="input-text"
-              type="number"
-              name="H1"
-              id="H1"
-              (change)="t1Change()"
-              [(ngModel)]="H1"
-            />
+            <input type="range" min="1" max="100" value="40" class="slider" step=".1" id="myRange" (change)="t1Change()"
+              [(ngModel)]="H1" />
+            <input min="1" max="100" step=".1" class="input-text" type="number" name="H1" id="H1" (change)="t1Change()"
+              [(ngModel)]="H1" />
             <!-- <span id="f" style="font-weight: bold; color: red">{{ H1 }}</span> -->
           </div>
           <div class="checkbox-sec">
@@ -172,8 +97,11 @@
             <img class="hare" id="hare" [src]="hareImgSrc" />
           </div>
         </div>
-        <!-- <img src="assets/race-pic.jpg"/> -->
- 
+        <div class="hare-div">
+          <img class="hare" id="hare" [src]="hareImgSrc" />
+        </div>
+      </div>
+      <!-- <img src="assets/race-pic.jpg"/> -->
+
     </div>
   </div>
-</div>

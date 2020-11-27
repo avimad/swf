@@ -11,7 +11,8 @@ import { SwfServiceService } from 'src/app/services/swf-service.service';
 })
 export class TortoiseHareComponent implements OnInit {
   board: any = {};
-
+  instructionOpen: boolean = false;
+  keyConceptOpen: boolean = false;
   T1 = 5;
   T2 = 4;
   H1 = 5;
@@ -181,5 +182,14 @@ export class TortoiseHareComponent implements OnInit {
     tortoise.style.left = this.T1 * 10 + 'px';
     hare.style.left = '0px';
     this.isReset = false;
+  }
+  openInstruction() {
+    this.instructionOpen=!this.instructionOpen;
+  }
+  openKeyConcept() {
+    this.keyConceptOpen=!this.keyConceptOpen;
+  }
+  printPage() {
+    window.print();
   }
 }

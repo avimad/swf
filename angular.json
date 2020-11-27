@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sefHtml"
+    }
+  },
+  "defaultProject": "sefHtml",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -59,12 +59,187 @@ header.siteHeader {
 	overflow:hidden;
     height: 150px;
 }
+.logo {
+    position: absolute;
+    top: 8px;
+}
+.heading {
+    color: #258382;
+    font-weight: bold;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px #bbb;
+    display: inline-block;
+    margin: 20px 0 0 75px;
+    /* float: left; */
+}
 .upper-header .logo-sec a {
-    width: 100%;
+    width: 75px;
     float: left;
 }
 .upper-header .logo-sec a img {
-    width: 100%;
+    width: 75px;
+}
+.instruction-popup {
+    width: 192px;
+    height: 305px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 80px;
+    border: 2px solid #EAEAEA;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 3px -1px #EAEAEA;
+    z-index: 1;
+}
+.instruction-popup-corner {
+    position: absolute;
+    left: -20px;
+    top: -12px;
+}
+.instruction-popup-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    border: 1px solid#B3C1C7;
+    width: 20px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+}
+.popup-head {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 11px;
+    cursor: pointer;
+}
+.popup-txt {
+    margin: 15px 10px 0 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 15px;
+    height: 227px;
+    overflow: auto;
+}
+.keyconcepts-popup {
+    width: 550px;
+    height: 390px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 80px;
+    border: 2px solid #EAEAEA;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 3px -1px #EAEAEA;
+    z-index: 1;
+}
+.keyconcepts-head {
+    background: #FEE5AD;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    padding: 8px 8px;
+    font-weight: bold;
+    color: #095E8C;
+    cursor: pointer;
+    font-family: auto;
+}
+.key-concept-inner {
+    margin: 10px 10px 0 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 15px;
+    height: 325px;
+    overflow: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 1px #095e8c;
+}
+.simple-key-para {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.essential-span {
+    color: #C6371D;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+}
+.essential-p {
+    font-family: sans-serif;
+    font-size: 16px;
+    display: inline;
+    margin-left: 10px;
+}
+.design-key-para {
+    margin-top: 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.key-concept-p {
+    background: #F7E2B4;
+    height: 26px;
+    padding-top: 3px;
+    font-family: sans-serif;
+    position: relative;
+}
+.first-p {
+    float: left;
+    margin: 0;
+}
+.second-p {
+    float: right;
+    margin: 0;
+}
+.sup {
+    position: relative;
+    top: 3px;
+    font-size: 13px;
+}
+.key-concept-span {
+    font-weight: bold;
+    font-family: Frutiger;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+.key-concept-popup-corner {
+    position: absolute;
+    left: -5px;
+    top: -12px;
+}
+.perfect-square {
+    height: 35px;
+    padding: 5px 35px;
+    font-size: 16px;
+}
+.difference-square {
+    text-align: center;
+    height: 35px;
+    padding: 5px 35px;
+    font-size: 16px;
+}
+.instruction-popup-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    border: 1px solid#B3C1C7;
+    width: 20px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
 }
 .navbar {
     width: 30%;
@@ -77,7 +252,7 @@ header.siteHeader {
 .upper-header ul li {
     width: auto;
     float: left;
-    padding: 10px 16px 0px;
+    padding: 10px 5px 0px;
     list-style: none;
 }
 .upper-header ul li a img {
@@ -384,8 +559,6 @@ header.siteHeader {
     width: 40%;
 }
 
-element.style {
-}
 .content-sec .left-bar .sec-bar {
     padding: 10px 10px;
 }
