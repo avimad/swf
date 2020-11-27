@@ -1,32 +1,5 @@
 <!-- Header -->
-<header class="siteHeader">
-  <div class="container">
-    <div class="upper-header">
-      <div class="logo-sec">
-        <a href="#"><img src="assets/logo.png" /></a>
-      </div>
-      <div class="navbar">
-        <ul>
-          <li>
-            <a href="#"><img src="assets/megaphone.png" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="assets/megaphone.png" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="assets/megaphone.png" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="assets/megaphone.png" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="assets/megaphone.png" /></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
+
 <div class="content-sec">
   <div class="container">
     <div class="left-bar">
@@ -190,8 +163,8 @@
 
        
         <div class="row race-sec">
-          <button (click)="simulation()" class="btn btn-primary">Simulate</button>
-          <button (click)="reset()">Reset</button>
+          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary">Simulate</button>
+          <button [hidden]="!isReset" (click)="reset()">Reset</button>
           <div class="tortoise-div">
             <img class="tortoise" id="tortoise" [src]="torImgSrc" />
           </div>

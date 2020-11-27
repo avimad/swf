@@ -16,6 +16,8 @@ export class TortoiseHareComponent implements OnInit {
   T2 = 4;
   H1 = 5;
   distance = 50;
+  isShowButton = true;
+  isReset = false;
 
   hareImgSrc = 'assets/images/tortoise/4.svg';
   torImgSrc = 'assets/images/tortoise/12.svg';
@@ -137,7 +139,7 @@ export class TortoiseHareComponent implements OnInit {
   }
 
   simulation() {
-    this.isToggle = true;
+    this.isShowButton = false;
     const Ttime = (50 - this.T1) / this.T2;
     const Htime = 50 / this.H1;
 
@@ -154,18 +156,20 @@ export class TortoiseHareComponent implements OnInit {
     hare.style.left = '500px';
 
     setTimeout(() => {
-      this.isToggle = false;
+      this.isShowButton = true;
+      this.isReset = true;
       this.torImgSrc = 'assets/images/tortoise/12.svg';
       tortoise.style.transition = ``;
-
     }, simTime * 1000);
 
     setTimeout(() => {
-      this.isToggle = false;
+      this.isShowButton = true;
+      this.isReset = true;
       this.hareImgSrc = 'assets/images/tortoise/4.svg';
       hare.style.transition = ``;
     }, simTime * 1000);
   }
+
   reset() {
     this.torImgSrc = 'assets/images/tortoise/12.svg';
     this.hareImgSrc = 'assets/images/tortoise/4.svg';
@@ -176,5 +180,6 @@ export class TortoiseHareComponent implements OnInit {
 
     tortoise.style.left = this.T1 * 10 + 'px';
     hare.style.left = '0px';
+    this.isReset = false;
   }
 }
