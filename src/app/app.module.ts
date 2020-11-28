@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { LinearEquationComponent } from './components/linear-equation/linear-equation.component';
 
 @NgModule({
-  declarations: [AppComponent, TortoiseHareComponent, HeaderComponent],
+  declarations: [AppComponent, TortoiseHareComponent, LinearEquationComponent, HeaderComponent],
   imports: [
     BrowserModule,
     FormsModule,
