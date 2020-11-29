@@ -91,7 +91,51 @@
 .input-text {
   width: 50px;
 }
-
+.simulate-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.simulate-hover {
+  display: none;
+}
+.simulate-btn:hover .simulate-hover{
+  display: block;
+}
+.simulate-btn:hover .simulate-initial{
+  display: none;
+}
+.reset-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.reset-hover {
+  display: none;
+}
+.reset-btn:hover .reset-hover{
+  display: block;
+}
+.reset-btn:hover .reset-initial{
+  display: none;
+}
+.next-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.next-btn-hover {
+  display: none;
+}
+.next-btn:hover .next-btn-hover{
+  display: block;
+}
+.next-btn:hover .next-btn-initial{
+  display: none;
+}
 @keyframes cf3FadeInOut {
   /* distributing times evenly */
   0% {

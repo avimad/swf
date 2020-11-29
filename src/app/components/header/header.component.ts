@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  instructionOpen: boolean = false;
+  keyConceptOpen: boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
+  openInstruction() {
+    this.instructionOpen=!this.instructionOpen;
+  }
+  openKeyConcept() {
+    this.keyConceptOpen=!this.keyConceptOpen;
+  }
+  printPage() {
+    window.print();
+  }
 }

@@ -32,6 +32,18 @@ export class TortoiseHareComponent implements OnInit {
   constructor(private service: SwfServiceService) {
     this.getStep1Data();
   }
+  openCity(name) {
+    var btnContainer = document.getElementById(name);
+    var btns = btnContainer.getElementsByClassName("tablinks");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+
+  }
   nextData() {
     this.i = this.i + 1;
     this.stageData = this.dataStep1[this.i];
@@ -70,6 +82,7 @@ export class TortoiseHareComponent implements OnInit {
   }
   ngOnInit(): void {
     this.t1Change();
+    this.openCity("Controls");
   }
 
   t1Change() {

@@ -25,16 +25,23 @@
         <h2>{{ stageData.stage_title }}</h2>
         <p class="scroll" [innerHTML]="stageData.stage_content"></p>
         <p>Click <b>Next </b>to continue.</p>
-        <a (click)="nextData()">Next</a>
+        <button (click)="nextData()" class="next-btn">
+          <div class="next-btn-initial">
+            <img src="assets/GlobalImage/Next.png" />
+          </div>
+          <div class="next-btn-hover">
+            <img src="assets/GlobalImage/Next_Rollover.png" />
+          </div>
+        </button>
       </div>
     </div>
     <div class="right-sec modeling">
       <div class="tabing-sec">
         <div class="tab">
-          <button class="tablinks active" onclick="openCity(event, 'London')">
+          <button class="tablinks" id="Controls" (click)="openCity('Controls')">
             Controls
           </button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">
+          <button class="tablinks" id="Tables" (click)="openCity('Tables')">
             Tables
           </button>
         </div>
@@ -88,8 +95,22 @@
 
        
         <div class="row race-sec">
-          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary">Simulate</button>
-          <button [hidden]="!isReset" (click)="reset()">Reset</button>
+          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary simulate-btn">
+            <div class="simulate-initial">
+              <img src="assets/GlobalImage/Simulate.png" />
+            </div>
+            <div class="simulate-hover">
+              <img src="assets/GlobalImage/Simulate_Hover.png" />
+            </div>
+          </button>
+          <button [hidden]="!isReset" (click)="reset()" class="reset-btn">
+            <div class="reset-initial">
+              <img src="assets/GlobalImage/Reset.png" />
+            </div>
+            <div class="reset-hover">
+              <img src="assets/GlobalImage/Reset_Hover.png" />
+            </div>
+          </button>
           <div class="tortoise-div">
             <img class="tortoise" id="tortoise" [src]="torImgSrc" />
           </div>
