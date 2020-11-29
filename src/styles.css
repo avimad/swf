@@ -364,7 +364,7 @@ header.siteHeader {
 .tabcontent span {
     border: 1px solid #ddd;
     background: #fff;
-    width: 12%;
+    /* width: 12%; */
     float: left;
     text-align: center;
     color: #000!important;
@@ -604,6 +604,12 @@ header.siteHeader {
   .next-btn:hover .next-btn-initial{
     display: none;
   }
+.table th {
+    width: 100px;
+}
+.mainInput{
+    width: 50px;
+}
 
 /*------------------responsive--------------*/
 

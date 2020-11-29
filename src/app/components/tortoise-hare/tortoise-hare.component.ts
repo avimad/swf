@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as JXG from 'jsxgraph';
 import { toUnicode } from 'punycode';
-import { ILinearData } from 'src/app/models/data';
+import { ILinearData, ItortoiseTable } from 'src/app/models/data';
 import { SwfServiceService } from 'src/app/services/swf-service.service';
 
 @Component({
@@ -15,9 +15,14 @@ export class TortoiseHareComponent implements OnInit {
   T1 = 5;
   T2 = 4;
   H1 = 5;
+  tMin = 0.0;
+  tMax = 5.0;
+  tStep = 0.1;
   distance = 50;
   isShowButton = true;
   isReset = false;
+  tTable: ItortoiseTable[] = [];
+  tTableSingle: ItortoiseTable = {};
 
   isControl = true;
   isTable = false;
@@ -36,15 +41,14 @@ export class TortoiseHareComponent implements OnInit {
   }
   openCity(name) {
     var btnContainer = document.getElementById(name);
-    var btns = btnContainer.getElementsByClassName("tablinks");
+    var btns = btnContainer.getElementsByClassName('tablinks');
     for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+      btns[i].addEventListener('click', function () {
+        var current = document.getElementsByClassName('active');
+        current[0].className = current[0].className.replace(' active', '');
+        this.className += ' active';
       });
     }
-
   }
   nextData() {
     this.i = this.i + 1;
@@ -83,8 +87,23 @@ export class TortoiseHareComponent implements OnInit {
     this.stageData = this.dataStep2[this.i];
   }
   ngOnInit(): void {
+    this.tTableSingle.tMin = this.tMin;
+    this.tTableSingle.tMax = this.tMax;
+    this.tTableSingle.tStep = this.tStep;
+    this.tTable.push(this.tTableSingle);
     this.t1Change();
-    this.openCity("Controls");
+    // this.openCity('Controls');
+    for (let index = 0; index < 50; index++) {
+      console.log(index);
+      this.tTableSingle.tMin = this.tTableSingle.tMin + this.tStep;
+      this.tTableSingle.tMax =
+        this.tTableSingle.tMax + (this.tTableSingle.tMax * this.tStep);
+      this.tTableSingle.tStep = this.tMin;
+
+      const data = Object.assign({}, this.tTableSingle);
+      this.tTable.push(data);
+    }
+    console.log(this.tTable);
   }
 
   t1Change() {
@@ -198,5 +217,7 @@ export class TortoiseHareComponent implements OnInit {
     hare.style.left = '0px';
     this.isReset = false;
   }
-
+  arrayOne(n: number): any[] {
+    return Array(n);
+  }
 }

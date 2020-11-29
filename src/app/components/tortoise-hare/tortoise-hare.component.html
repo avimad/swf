@@ -52,14 +52,17 @@
     <div class="right-sec modeling" [ngClass]="i == 0 ? 'disbaled_div' : ''">
       <div class="tabing-sec">
         <div class="tab">
-          <button class="tablinks active" (click)="isControl = true; isTable = false">
+          <button
+            class="tablinks active"
+            (click)="isControl = true; isTable = false"
+          >
             Controls
           </button>
           <button class="tablinks" (click)="isTable = true; isControl = false">
             Tables
           </button>
         </div>
-         <div *ngIf="isControl">
+        <div *ngIf="isControl">
           <div class="tabcontent">
             <div class="slidecontainer">
               <p><b>Tortoise:</b> head start in meters:</p>
@@ -120,7 +123,7 @@
               <!-- <span id="f" style="font-weight: bold; color: red">{{ T2 }}</span> -->
             </div>
           </div>
-  
+
           <div class="tabcontent">
             <div class="slidecontainer">
               <p><b>Hare:</b> average speed in meters per second:</p>
@@ -156,8 +159,8 @@
               <p>Show whether the hare oertakes the tortoise.</p>
             </div>
           </div>
-         </div>
-         <div *ngIf="isTable">
+        </div>
+        <div *ngIf="isTable">
           <div class="tabcontent">
             <table class="table">
               <thead>
@@ -165,41 +168,60 @@
                 <th>D <sup>hare</sup></th>
                 <th>D <sup>tortoise</sup></th>
               </thead>
+              <tbody>
+                <tr *ngFor="let d of tTable">
+                  <td>{{d.tMin | number}}</td>
+                  <td>{{d.tMax | number}}</td>
+                  <td>{{d.tStep}}</td>
+                </tr>
+            </tbody>
             </table>
-          </div>   
+            <table class="table">
+              <thead>
+                <th><input class="mainInput" type="number" name="" id="" [(ngModel)]="tMin" /><span>t <sup>-Min</sup></span></th>
+                <th><input class="mainInput" type="number" name="" id="" [(ngModel)]="tMax" /><span>t <sup>-Max</sup></span></th>
+                <th>
+                  <input class="mainInput" type="number" name="" id="" [(ngModel)]="tStep" /><span>t<sup>-Step</sup></span>
+                </th>
+              </thead>
+ 
+            </table>
+          </div>
         </div>
-
       </div>
       <div class="graph-sec">
         <div id="box" class="jxgbox" style="width: 300px; height: 300px"></div>
       </div>
 
-       
-        <div class="row race-sec">
-          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary simulate-btn">
-            <div class="simulate-initial">
-              <img src="assets/GlobalImage/Simulate.png" />
-            </div>
-            <div class="simulate-hover">
-              <img src="assets/GlobalImage/Simulate_Hover.png" />
-            </div>
-          </button>
-          <button [hidden]="!isReset" (click)="reset()" class="reset-btn">
-            <div class="reset-initial">
-              <img src="assets/GlobalImage/Reset.png" />
-            </div>
-            <div class="reset-hover">
-              <img src="assets/GlobalImage/Reset_Hover.png" />
-            </div>
-          </button>
-          <div class="tortoise-div">
-            <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+      <div class="row race-sec">
+        <button
+          [hidden]="isReset"
+          (click)="simulation()"
+          class="btn btn-primary simulate-btn"
+        >
+          <div class="simulate-initial">
+            <img src="assets/GlobalImage/Simulate.png" />
           </div>
-          <div class="hare-div">
-            <img class="hare" id="hare" [src]="hareImgSrc" />
+          <div class="simulate-hover">
+            <img src="assets/GlobalImage/Simulate_Hover.png" />
           </div>
+        </button>
+        <button [hidden]="!isReset" (click)="reset()" class="reset-btn">
+          <div class="reset-initial">
+            <img src="assets/GlobalImage/Reset.png" />
+          </div>
+          <div class="reset-hover">
+            <img src="assets/GlobalImage/Reset_Hover.png" />
+          </div>
+        </button>
+        <div class="tortoise-div">
+          <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+        </div>
+        <div class="hare-div">
+          <img class="hare" id="hare" [src]="hareImgSrc" />
         </div>
       </div>
     </div>
-    <!-- <img src="assets/race-pic.jpg"/> -->
   </div>
+  <!-- <img src="assets/race-pic.jpg"/> -->
+</div>
