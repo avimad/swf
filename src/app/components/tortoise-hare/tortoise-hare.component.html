@@ -155,7 +155,8 @@
               <input type="checkbox" />
               <p>Show whether the hare oertakes the tortoise.</p>
             </div>
-          </div> </div>
+          </div>
+         </div>
          <div *ngIf="isTable">
           <div class="tabcontent">
             <table class="table">
@@ -173,23 +174,32 @@
         <div id="box" class="jxgbox" style="width: 300px; height: 300px"></div>
       </div>
 
-      <div class="row race-sec">
-        <button
-          [hidden]="isReset"
-          (click)="simulation()"
-          class="btn btn-primary"
-        >
-          Simulate
-        </button>
-        <button [hidden]="!isReset" (click)="reset()">Reset</button>
-        <div class="tortoise-div">
-          <img class="tortoise" id="tortoise" [src]="torImgSrc" />
-        </div>
-        <div class="hare-div">
-          <img class="hare" id="hare" [src]="hareImgSrc" />
+       
+        <div class="row race-sec">
+          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary simulate-btn">
+            <div class="simulate-initial">
+              <img src="assets/GlobalImage/Simulate.png" />
+            </div>
+            <div class="simulate-hover">
+              <img src="assets/GlobalImage/Simulate_Hover.png" />
+            </div>
+          </button>
+          <button [hidden]="!isReset" (click)="reset()" class="reset-btn">
+            <div class="reset-initial">
+              <img src="assets/GlobalImage/Reset.png" />
+            </div>
+            <div class="reset-hover">
+              <img src="assets/GlobalImage/Reset_Hover.png" />
+            </div>
+          </button>
+          <div class="tortoise-div">
+            <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+          </div>
+          <div class="hare-div">
+            <img class="hare" id="hare" [src]="hareImgSrc" />
+          </div>
         </div>
       </div>
     </div>
     <!-- <img src="assets/race-pic.jpg"/> -->
   </div>
-</div>

@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   keyConceptOpen: boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
   openInstruction() {
     this.instructionOpen=!this.instructionOpen;
@@ -21,5 +21,4 @@ export class HeaderComponent implements OnInit {
   printPage() {
     window.print();
   }
-
 }

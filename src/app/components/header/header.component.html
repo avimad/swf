@@ -12,14 +12,13 @@
       <div class="navbar">
         <ul>
           <li>
-            <a class="audio-link">
+            <a class="audio">
               <div class="audio-initial">
-                <img src="assets/GlobalImage/2.png" />
+                <img src="assets/GlobalImage/disabled_speaker.PNG" />
               </div>
-              
-              <div class="audio-hover">
+              <!-- <div class="audio-hover">
                 <img src="assets/GlobalImage/Audio_hover.png" />
-              </div>
+              </div> -->
             </a>
           </li>
           <li>
@@ -29,40 +28,40 @@
               </div>
               <div class="instruction-hover">
                 <img src="assets/GlobalImage/Instruction_hover.png" />
-                
               </div>
               <span class="tooltiptext">Instructions</span>
             </a>
           </li>
           <li>
-            <a class="vocab-link">
+            <a class="vocab">
               <div class="vocab-initial">
-                <img src="assets/GlobalImage/4.png" />
+                <img src="assets/GlobalImage/disabled_audio.PNG" />
               </div>
-              <div class="vocab-hover">
+              <!-- <div class="vocab-hover">
                 <img src="assets/GlobalImage/Vocab_Hover.png" />
-              </div>
+              </div> -->
             </a>
           </li>
           <li>
-            <a (click)="openKeyConcept()" class="concept-link">
+            <a (click)="openKeyConcept()" class="concept-link tooltip">
               <div class="concept-initial">
                 <img src="assets/GlobalImage/5.png" />
               </div>
               <div class="concept-hover">
                 <img src="assets/GlobalImage/KeyConcepts_Hover.png" />
               </div>
+              <span class="tooltiptext">Key Concept</span>
             </a>
           </li>
           <li>
-            <a (click)="printPage()" class="print-link">
+            <a (click)="printPage()" class="print-link tooltip">
               <div class="print-initial">
                 <img src="assets/GlobalImage/6.png" />
               </div>
               <div class="print-hover">
                 <img src="assets/GlobalImage/Print_hover.png" />
-               
               </div>
+              <span class="tooltiptext">Print</span>
             </a>
           </li>
         </ul>
