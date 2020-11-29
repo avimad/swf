@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  instructionOpen: boolean = false;
+  keyConceptOpen: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  openInstruction() {
+    this.instructionOpen=!this.instructionOpen;
+  }
+  openKeyConcept() {
+    this.keyConceptOpen=!this.keyConceptOpen;
+  }
+  printPage() {
+    window.print();
   }
 
 }

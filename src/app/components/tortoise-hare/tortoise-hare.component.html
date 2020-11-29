@@ -5,18 +5,38 @@
       <div class="sec-bar">
         <p>
           Section:
-          <i (click)="getStep1Data()" [ngClass]="i == 0 ? 'yellow' : ''" class="fa fa-home" aria-hidden="true"></i>
-          <i (click)="getStep1Data()" [ngClass]="i == 1 ? 'yellow' : ''" aria-hidden="true">|</i>
-          <i (click)="getStep2Data()" [ngClass]="i == 2 ? 'yellow' : ''" aria-hidden="true">||</i>
+          <i
+            (click)="getStep1Data()"
+            [ngClass]="i == 0 ? 'yellow' : ''"
+            class="fa fa-home"
+            aria-hidden="true"
+          ></i>
+          <i
+            (click)="getStep1Data()"
+            [ngClass]="i == 1 ? 'yellow' : ''"
+            aria-hidden="true"
+            >|</i
+          >
+          <i
+            (click)="getStep2Data()"
+            [ngClass]="i == 2 ? 'yellow' : ''"
+            aria-hidden="true"
+            >||</i
+          >
         </p>
       </div>
-      <div class="question-sec">
+      <div class="question-sec" *ngIf="i > 0">
         <img src="assets/arrow.png" />
         <p>Question:</p>
-        <i (click)="nextPageData(k + 1)" [ngClass]="i == k + 1 ? 'yellow' : ''" *ngFor="
+        <i
+          (click)="nextPageData(k + 1)"
+          [ngClass]="i == k + 1 ? 'yellow' : ''"
+          *ngFor="
             let d of dataStep1 | slice: 1:dataStep1.length - 1;
             let k = index
-          ">{{ k + 1 }}</i>
+          "
+          >{{ k + 1 }}</i
+        >
 
         <a (click)="prevData()" class="previous round">&#8249;</a>
         <a (click)="nextData()" class="next round">&#8250;</a>
@@ -25,80 +45,151 @@
         <h2>{{ stageData.stage_title }}</h2>
         <p class="scroll" [innerHTML]="stageData.stage_content"></p>
         <p>Click <b>Next </b>to continue.</p>
-        <a (click)="nextData()">Next</a>
+        <a (click)="nextData()" *ngIf="i > 0">Next</a>
+        <a (click)="nextData()" *ngIf="i == 0">Continue</a>
       </div>
     </div>
-    <div class="right-sec modeling">
+    <div class="right-sec modeling" [ngClass]="i == 0 ? 'disbaled_div' : ''">
       <div class="tabing-sec">
         <div class="tab">
-          <button class="tablinks active" onclick="openCity(event, 'London')">
+          <button class="tablinks active" (click)="isControl = true; isTable = false">
             Controls
           </button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">
+          <button class="tablinks" (click)="isTable = true; isControl = false">
             Tables
           </button>
         </div>
-
-        <div class="tabcontent">
-          <div class="slidecontainer">
-            <p><b>Tortoise:</b> head start in meters:</p>
-            <div class="icon-sec">
-              <img src="assets/tortoise.png" />
+         <div *ngIf="isControl">
+          <div class="tabcontent">
+            <div class="slidecontainer">
+              <p><b>Tortoise:</b> head start in meters:</p>
+              <div class="icon-sec">
+                <img src="assets/tortoise.png" />
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                step=".1"
+                class="slider"
+                (change)="t1Change()"
+                id="myRange"
+                [(ngModel)]="T1"
+              />
+              <input
+                min="1"
+                max="100"
+                step=".1"
+                class="input-text"
+                type="number"
+                name="T1"
+                id="T1"
+                (change)="t1Change()"
+                [(ngModel)]="T1"
+              />
+              <!-- <span id="f" style="font-weight: bold; color: red">{{ T1 }}</span> -->
             </div>
-            <input type="range" min="1" max="100" value="50" step=".1" class="slider" (change)="t1Change()" id="myRange"
-              [(ngModel)]="T1" />
-            <input min="1" max="100" step=".1" class="input-text" type="number" name="T1" id="T1" (change)="t1Change()"
-              [(ngModel)]="T1" />
-            <!-- <span id="f" style="font-weight: bold; color: red">{{ T1 }}</span> -->
-          </div>
-          <div class="slidecontainer">
-            <p><b>Tortoise:</b> average speed in meters per second:</p>
-            <div class="icon-sec">
-              <img src="assets/tortoise.png" />
+            <div class="slidecontainer">
+              <p><b>Tortoise:</b> average speed in meters per second:</p>
+              <div class="icon-sec">
+                <img src="assets/tortoise.png" />
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                step=".1"
+                class="slider"
+                id="myRange"
+                (change)="t1Change()"
+                [(ngModel)]="T2"
+              />
+              <input
+                min="1"
+                max="100"
+                step=".1"
+                class="input-text"
+                type="number"
+                name="T2"
+                id="T2"
+                (change)="t1Change()"
+                [(ngModel)]="T2"
+              />
+              <!-- <span id="f" style="font-weight: bold; color: red">{{ T2 }}</span> -->
             </div>
-            <input type="range" min="1" max="100" value="50" step=".1" class="slider" id="myRange" (change)="t1Change()"
-              [(ngModel)]="T2" />
-            <input min="1" max="100" step=".1" class="input-text" type="number" name="T2" id="T2" (change)="t1Change()"
-              [(ngModel)]="T2" />
-            <!-- <span id="f" style="font-weight: bold; color: red">{{ T2 }}</span> -->
           </div>
+  
+          <div class="tabcontent">
+            <div class="slidecontainer">
+              <p><b>Hare:</b> average speed in meters per second:</p>
+              <div class="icon-sec">
+                <img src="assets/rabbit-shape.png" />
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="40"
+                class="slider"
+                step=".1"
+                id="myRange"
+                (change)="t1Change()"
+                [(ngModel)]="H1"
+              />
+              <input
+                min="1"
+                max="100"
+                step=".1"
+                class="input-text"
+                type="number"
+                name="H1"
+                id="H1"
+                (change)="t1Change()"
+                [(ngModel)]="H1"
+              />
+              <!-- <span id="f" style="font-weight: bold; color: red">{{ H1 }}</span> -->
+            </div>
+            <div class="checkbox-sec">
+              <input type="checkbox" />
+              <p>Show whether the hare oertakes the tortoise.</p>
+            </div>
+          </div> </div>
+         <div *ngIf="isTable">
+          <div class="tabcontent">
+            <table class="table">
+              <thead>
+                <th>t</th>
+                <th>D <sup>hare</sup></th>
+                <th>D <sup>tortoise</sup></th>
+              </thead>
+            </table>
+          </div>   
         </div>
 
-        <div class="tabcontent">
-          <div class="slidecontainer">
-            <p><b>Hare:</b> average speed in meters per second:</p>
-            <div class="icon-sec">
-              <img src="assets/rabbit-shape.png" />
-            </div>
-            <input type="range" min="1" max="100" value="40" class="slider" step=".1" id="myRange" (change)="t1Change()"
-              [(ngModel)]="H1" />
-            <input min="1" max="100" step=".1" class="input-text" type="number" name="H1" id="H1" (change)="t1Change()"
-              [(ngModel)]="H1" />
-            <!-- <span id="f" style="font-weight: bold; color: red">{{ H1 }}</span> -->
-          </div>
-          <div class="checkbox-sec">
-            <input type="checkbox" />
-            <p>Show whether the hare oertakes the tortoise.</p>
-          </div>
-        </div>
       </div>
       <div class="graph-sec">
         <div id="box" class="jxgbox" style="width: 300px; height: 300px"></div>
       </div>
 
-       
-        <div class="row race-sec">
-          <button [hidden]="isReset" (click)="simulation()" class="btn btn-primary">Simulate</button>
-          <button [hidden]="!isReset" (click)="reset()">Reset</button>
-          <div class="tortoise-div">
-            <img class="tortoise" id="tortoise" [src]="torImgSrc" />
-          </div>
-          <div class="hare-div">
-            <img class="hare" id="hare" [src]="hareImgSrc" />
-          </div>
+      <div class="row race-sec">
+        <button
+          [hidden]="isReset"
+          (click)="simulation()"
+          class="btn btn-primary"
+        >
+          Simulate
+        </button>
+        <button [hidden]="!isReset" (click)="reset()">Reset</button>
+        <div class="tortoise-div">
+          <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+        </div>
+        <div class="hare-div">
+          <img class="hare" id="hare" [src]="hareImgSrc" />
         </div>
       </div>
-      <!-- <img src="assets/race-pic.jpg"/> -->
-
     </div>
+    <!-- <img src="assets/race-pic.jpg"/> -->
   </div>
+</div>

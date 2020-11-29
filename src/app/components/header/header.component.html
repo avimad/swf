@@ -1,28 +1,103 @@
 <header class="siteHeader">
-    <div class="container">
-      <div class="upper-header">
-        <div class="logo-sec">
-          <a href="#"><img src="assets/logo.png" /></a>
+  <div class="container">
+    <div class="upper-header">
+      <div class="logo-sec">
+        <div class="logo">
+        <img src="assets/GlobalImage/1.png" />
         </div>
-        <div class="navbar">
-          <ul>
-            <li>
-              <a href="#"><img src="assets/megaphone.png" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="assets/megaphone.png" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="assets/megaphone.png" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="assets/megaphone.png" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="assets/megaphone.png" /></a>
-            </li>
-          </ul>
-        </div>
+        <p class="heading">
+          Modeling Linear System
+        </p>
+      </div>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a class="audio-link">
+              <div class="audio-initial">
+                <img src="assets/GlobalImage/2.png" />
+              </div>
+              
+              <div class="audio-hover">
+                <img src="assets/GlobalImage/Audio_hover.png" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a (click)="openInstruction()" class="instruction-link tooltip">
+              <div class="instruction-initial">
+                <img src="assets/GlobalImage/3.png" />
+              </div>
+              <div class="instruction-hover">
+                <img src="assets/GlobalImage/Instruction_hover.png" />
+                
+              </div>
+              <span class="tooltiptext">Instructions</span>
+            </a>
+          </li>
+          <li>
+            <a class="vocab-link">
+              <div class="vocab-initial">
+                <img src="assets/GlobalImage/4.png" />
+              </div>
+              <div class="vocab-hover">
+                <img src="assets/GlobalImage/Vocab_Hover.png" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a (click)="openKeyConcept()" class="concept-link">
+              <div class="concept-initial">
+                <img src="assets/GlobalImage/5.png" />
+              </div>
+              <div class="concept-hover">
+                <img src="assets/GlobalImage/KeyConcepts_Hover.png" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a (click)="printPage()" class="print-link">
+              <div class="print-initial">
+                <img src="assets/GlobalImage/6.png" />
+              </div>
+              <div class="print-hover">
+                <img src="assets/GlobalImage/Print_hover.png" />
+               
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+<div class="instruction-popup" *ngIf=instructionOpen>
+  <img src="assets/GlobalImage/instuction_popup.png" class="instruction-popup-corner">
+  <span class="instruction-popup-close" (click)="openInstruction()">&times;</span> 
+  <p class="popup-head">Instructions</p>
+  <div class="popup-txt"><p>Use the tools in the workspace to guide you through the activity. After completing each question on the left, click the Next, Save, or Continue button to move on to the next question or section.</p></div>
+</div>
+
+<div class="keyconcepts-popup" *ngIf=keyConceptOpen>
+  <div class="keyconcepts-head">
+    <p style="margin: 0;">Key Concepts</p>
+    <span class="instruction-popup-close" (click)="openKeyConcept()">&times;</span>
+  </div>
+  <div class="key-concept-inner">
+    <div class="simple-key-para"><span class="essential-span">Essential Understanding</span><p class="essential-p">You can factor many quadratic trinomials(a<i>x</i><sup>2</sup>+ b<i>x</i> + c) into products of two binomials.</p></div>
+    <div class="design-key-para">
+      <p class="key-concept-p"><img src="assets/GlobalImage/7.png" class="key-concept-popup-corner"><span class="key-concept-span">Key Concept</span>Factoring Perfect Square Trinomials</p>
+      <div class="perfect-square">
+        <p class="first-p"><i>a</i><sup>2</sup> + 2<i>ab</i> + <i>b</i><sup>2</sup> = (<i>a</i> + <i>b</i>)<sup>2</sup></p>
+        <p class="second-p"><i>a</i><sup>2</sup> - 2<i>ab</i> + <i>b</i><sup>2</sup> = (<i>a</i> - <i>b</i>)<sup>2</sup></p>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="design-key-para">
+      <p class="key-concept-p"><img src="assets/GlobalImage/7.png" class="key-concept-popup-corner"><span class="key-concept-span">Key Concept</span>Factoring a Difference of Two Squares</p>
+      <div class="difference-square">
+        <p style="margin: 0;">(<i>a</i><sup>2</sup> - <i>b</i><sup>2</sup>) = (<i>a</i> + <i>b</i>)(<i>a</i> - <i>b</i>)</p>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

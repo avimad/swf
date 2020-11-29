@@ -515,6 +515,94 @@ header.siteHeader {
 .question-sec i.yellow {
     background: #f7c22f;
 }
+.disbaled_div {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .audio-hover {
+    display: none;
+  }
+  .audio-link:hover .audio-hover{
+    display: block;
+  }
+  .audio-link:hover .audio-initial{
+    display: none;
+  }
+  
+  .instruction-hover {
+    display: none;
+  }
+  .instruction-link:hover .instruction-hover{
+    display: block;
+  }
+  .instruction-link:hover .instruction-initial{
+    display: none;
+  }
+  
+  .vocab-hover {
+    display: none;
+  }
+  .vocab-link:hover .vocab-hover{
+    display: block;
+  }
+  .vocab-link:hover .vocab-initial{
+    display: none;
+  }
+  
+  .concept-hover {
+    display: none;
+  }
+  .concept-link:hover .concept-hover{
+    display: block;
+  }
+  .concept-link:hover .concept-initial{
+    display: none;
+  }
+  
+  .print-hover {
+    display: none;
+  }
+  .print-link:hover .print-hover{
+    display: block;
+  }
+  .print-link:hover .print-initial{
+    display: none;
+  }
+  
+  .next-btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  .next-btn-hover {
+    display: none;
+  }
+  .next-btn:hover .next-btn-hover{
+    display: block;
+  }
+  .next-btn:hover .next-btn-initial{
+    display: none;
+  }
 
 /*------------------responsive--------------*/
 
