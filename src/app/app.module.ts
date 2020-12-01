@@ -19,16 +19,16 @@ import { LinearEquationComponent } from './components/linear-equation/linear-equ
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {
-        path: 'tortoise-hare',
+        path: 'MAT11NA_09_06_04_005',
         component: TortoiseHareComponent,
       },
       {
-        path: 'linear-inequality',
+        path: 'MAT11NA_09_06_06_005',
         component: LinearEquationComponent,
       },
       {
         path: '',
-        redirectTo: 'tortoise-hare',
+        redirectTo: 'MAT11NA_09_06_04_005',
         pathMatch: 'full',
       },
     ]),
