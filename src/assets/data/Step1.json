@@ -2,7 +2,7 @@
 	{
 		"problem_title": "Model and factor the polynomial.<br><span class='TextBold'><i>x</i><sup>2</sup> + 3<i>x</i> + 2",
 		"stage_title": "",
-		"stage_content": "A linear system of two equations with two variables can be solved by graphing. Each equation is plotted on the graph. The point of intersection of the two lines is the solution to the system <br> In this activity, you will  model distance-time graphs of a tortoise and a hare. Time is plotted on the x-axis and the distance traveled for each animal is plotted on the y-axis. The point of intersection of the two lines gives the time and distance where the hare catches up with the tortoise. <br> This activity is divided into two sections: <br> <ul><li><strong>Section I -</strong> Representing Data Using Graphs and Tables</li><li><strong>Section II -</strong> Intersecting Lines</li></ul>",
+		"stage_content": "A linear system of two equations with two variables can be solved by graphing. Each equation is plotted on the graph. The point of intersection of the two lines is the solution to the system <br><br> In this activity, you will  model distance-time graphs of a tortoise and a hare. Time is plotted on the x-axis and the distance traveled for each animal is plotted on the y-axis. The point of intersection of the two lines gives the time and distance where the hare catches up with the tortoise. <br> This activity is divided into two sections: <br> <ul><li><strong>Section I -</strong> Representing Data Using Graphs and Tables</li><li><strong>Section II -</strong> Intersecting Lines</li></ul>",
 		"button_top_text": "Click <strong>Continue</strong> to begin.",
 		"button_text": "Continue"
 	},

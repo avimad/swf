@@ -7,19 +7,19 @@
           Section:
           <i
             (click)="getStep1Data()"
-            [ngClass]="i == 0 ? 'yellow' : ''"
+            [ngClass]="!isStep1 && !isStep2  ? 'yellow' : ''"
             class="fa fa-home"
             aria-hidden="true"
           ></i>
           <i
             (click)="getStep1Data()"
-            [ngClass]="i == 1 ? 'yellow' : ''"
+            [ngClass]="isStep1 ? 'yellow' : ''"
             aria-hidden="true"
             >|</i
           >
           <i
             (click)="getStep2Data()"
-            [ngClass]="i == 2 ? 'yellow' : ''"
+            [ngClass]="isStep2 ? 'yellow' : ''"
             aria-hidden="true"
             >||</i
           >
@@ -44,13 +44,30 @@
       <div class="text-bar">
         <h2>{{ stageData.stage_title }}</h2>
         <p class="scroll" [innerHTML]="stageData.stage_content"></p>
-        <p>Click <b>Next </b>to continue.</p>
-        <a (click)="nextData()" *ngIf="i > 0">Next</a>
-        <a (click)="nextData()" *ngIf="i == 0">Continue</a>
+        <p>
+          Click <b *ngIf="i > 0">Next </b> <b *ngIf="i == 0">Continue </b>to
+          continue.
+        </p>
+        <button class="btn btn-primary simulate-btn" (click)="nextData()" *ngIf="i > 0">
+          <div class="simulate-initial">
+            <img src="assets/GlobalImage/Next.png" />
+          </div>
+          <div class="simulate-hover">
+            <img src="assets/GlobalImage/Next_Rollover.png" />
+          </div>
+        </button>
+        <button class="btn btn-primary simulate-btn" (click)="nextData()" *ngIf="i == 0">
+          <div class="simulate-initial">
+            <img src="assets/GlobalImage/Continue.png" />
+          </div>
+          <div class="simulate-hover">
+            <img src="assets/GlobalImage/Continue_Hover.png" />
+          </div>
+        </button>
       </div>
     </div>
     <div class="right-sec modeling" [ngClass]="i == 0 ? 'disbaled_div' : ''">
-      <div class="tabing-sec">
+      <div class="tabing-sec" [ngClass]="!isShowButton ? 'disbaled_div' : ''">
         <div class="tab">
           <button
             class="tablinks active"
@@ -164,27 +181,61 @@
           <div class="tabcontent">
             <table class="table">
               <thead>
-                <th>t</th>
-                <th>D <sup>hare</sup></th>
-                <th>D <sup>tortoise</sup></th>
+                <th style="background-color: #808080ba">t</th>
+                <th style="background-color: #9dd9f2">D <sup>hare</sup></th>
+                <th style="background-color: #ebabab">D <sup>tortoise</sup></th>
               </thead>
               <tbody>
-                <tr *ngFor="let d of tTable">
-                  <td>{{d.tMin | number}}</td>
-                  <td>{{d.tMax | number}}</td>
-                  <td>{{d.tStep}}</td>
+                <tr>
+                  <td colspan="3">
+                    <div class="scrollit">
+                      <table>
+                        <tr *ngFor="let d of tTable">
+                          <td colspan="3" style="background-color: #8080806e">
+                            {{ d.tMin | number }}
+                          </td>
+                          <td colspan="3" style="background-color: #9dd9f2b0">
+                            {{ d.tMax | number }}
+                          </td>
+                          <td colspan="3" style="background-color: #ebababa3">{{ d.tStep }}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
                 </tr>
-            </tbody>
+             
+              </tbody>
             </table>
             <table class="table">
               <thead>
-                <th><input class="mainInput" type="number" name="" id="" [(ngModel)]="tMin" /><span>t <sup>-Min</sup></span></th>
-                <th><input class="mainInput" type="number" name="" id="" [(ngModel)]="tMax" /><span>t <sup>-Max</sup></span></th>
                 <th>
-                  <input class="mainInput" type="number" name="" id="" [(ngModel)]="tStep" /><span>t<sup>-Step</sup></span>
+                  <input
+                    class="mainInput"
+                    type="number"
+                    name=""
+                    id=""
+                    [(ngModel)]="tMin"
+                  /><span>t <sup>-Min</sup></span>
+                </th>
+                <th>
+                  <input
+                    class="mainInput"
+                    type="number"
+                    name=""
+                    id=""
+                    [(ngModel)]="tMax"
+                  /><span>t <sup>-Max</sup></span>
+                </th>
+                <th>
+                  <input
+                    class="mainInput"
+                    type="number"
+                    name=""
+                    id=""
+                    [(ngModel)]="tStep"
+                  /><span>t<sup>-Step</sup></span>
                 </th>
               </thead>
- 
             </table>
           </div>
         </div>
@@ -215,10 +266,17 @@
           </div>
         </button>
         <div class="tortoise-div">
-          <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+          <div>
+          <img class="tortoise" id="tortoise" [src]="torImgSrc" alt="CSS only Tooltip" />
+          <!-- <span class="tortoise_tooltip" id="tortoise_tooltip">
+            <strong>{{torDistance}}</strong>
+          </span> -->
         </div>
         <div class="hare-div">
           <img class="hare" id="hare" [src]="hareImgSrc" />
+          <!-- <span class="tortoise_tooltip" id="hare_tooltip">
+            <strong>{{hareDistance}}</strong>
+          </span> -->
         </div>
       </div>
     </div>

@@ -19,6 +19,9 @@ export class TortoiseHareComponent implements OnInit {
   tMax = 5.0;
   tStep = 0.1;
   distance = 50;
+  torDistance = 0;
+  hareDistance = 0;
+
   isShowButton = true;
   isReset = false;
   tTable: ItortoiseTable[] = [];
@@ -26,6 +29,8 @@ export class TortoiseHareComponent implements OnInit {
 
   isControl = true;
   isTable = false;
+  isStep1 = false;
+  isStep2 = false;
 
   hareImgSrc = 'assets/images/tortoise/4.svg';
   torImgSrc = 'assets/images/tortoise/12.svg';
@@ -66,6 +71,8 @@ export class TortoiseHareComponent implements OnInit {
     this.service.getStep1Data().subscribe((res) => {
       this.dataStep1 = res as [];
       console.log(this.dataStep1);
+      this.isStep1 = true;
+      this.isStep2 = false;
       this.i = 0;
       this.stageData = this.dataStep1[this.i];
     });
@@ -73,6 +80,8 @@ export class TortoiseHareComponent implements OnInit {
   getStep2Data() {
     this.service.getStep2Data().subscribe((res) => {
       this.dataStep1 = res as [];
+      this.isStep1 = false;
+      this.isStep2 = true;
       this.i = 0;
       this.stageData = this.dataStep1[this.i];
     });
@@ -97,13 +106,14 @@ export class TortoiseHareComponent implements OnInit {
       console.log(index);
       this.tTableSingle.tMin = this.tTableSingle.tMin + this.tStep;
       this.tTableSingle.tMax =
-        this.tTableSingle.tMax + (this.tTableSingle.tMax * this.tStep);
+        this.tTableSingle.tMax + this.tTableSingle.tMax * this.tStep;
       this.tTableSingle.tStep = this.tMin;
 
       const data = Object.assign({}, this.tTableSingle);
       this.tTable.push(data);
     }
     console.log(this.tTable);
+    this.reset();
   }
 
   t1Change() {
@@ -175,6 +185,8 @@ export class TortoiseHareComponent implements OnInit {
 
   simulation() {
     this.isShowButton = false;
+    this.torDistance = this.tMax;
+    this.hareDistance = this.tMin;
     const Ttime = (50 - this.T1) / this.T2;
     const Htime = 50 / this.H1;
 
@@ -182,19 +194,36 @@ export class TortoiseHareComponent implements OnInit {
     this.hareImgSrc = 'assets/images/tortoise/runnig-hare.gif';
     this.torImgSrc = 'assets/images/tortoise/runnig-tortoise.gif';
     const tortoise = document.getElementById('tortoise');
+    const tortoiseTooltip = document.getElementById('tortoise_tooltip');
+    const hareTooltip = document.getElementById('hare_tooltip');
+
     const hare = document.getElementById('hare');
 
     tortoise.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
-    hare.style.transition = `left ${Htime}s cubic-bezier(0, 0, 1, 1)`;
+    tortoiseTooltip.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
+    hareTooltip.style.transition = `left ${Htime}s cubic-bezier(0, 0, 1, 1)`;
 
     tortoise.style.left = '500px';
+    tortoiseTooltip.style.left = '500px';
     hare.style.left = '500px';
+    hareTooltip.style.left = '500px';
+
+    const sss = setInterval(() => {
+      this.torDistance = this.torDistance + this.tStep;
+      this.hareDistance = this.hareDistance + this.tStep;
+      if (this.torDistance == 50) {
+        clearInterval(sss);
+      }
+    }, this.tStep * 100);
 
     setTimeout(() => {
       this.isShowButton = true;
       this.isReset = true;
       this.torImgSrc = 'assets/images/tortoise/12.svg';
       tortoise.style.transition = ``;
+      tortoiseTooltip.style.transition = ``;
+      hareTooltip.style.transition = ``;
+      clearInterval(sss);
     }, simTime * 1000);
 
     setTimeout(() => {
@@ -209,11 +238,20 @@ export class TortoiseHareComponent implements OnInit {
     this.torImgSrc = 'assets/images/tortoise/12.svg';
     this.hareImgSrc = 'assets/images/tortoise/4.svg';
     const tortoise = document.getElementById('tortoise');
+    const tortoiseTooltip = document.getElementById('tortoise_tooltip');
+    const hareTooltip = document.getElementById('hare_tooltip');
+
     const hare = document.getElementById('hare');
     tortoise.style.transition = ``;
+    tortoiseTooltip.style.transition = ``;
+    hareTooltip.style.transition = ``;
     hare.style.transition = ``;
 
     tortoise.style.left = this.T1 * 10 + 'px';
+    tortoiseTooltip.style.left = this.T1 * 10 + 'px';
+    this.torDistance = this.tMax;
+    this.hareDistance = this.tMin;
+
     hare.style.left = '0px';
     this.isReset = false;
   }

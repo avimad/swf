@@ -516,6 +516,9 @@ header.siteHeader {
 .question-sec i.yellow {
     background: #f7c22f;
 }
+.sec-bar i.yellow {
+    background: #f7c22f !important;
+}
 .disbaled_div {
     pointer-events: none;
     opacity: 0.7;

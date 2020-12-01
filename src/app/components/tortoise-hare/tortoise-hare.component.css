@@ -136,6 +136,27 @@
 .next-btn:hover .next-btn-initial{
   display: none;
 }
+.scrollit{
+  overflow:scroll;
+  height:200px;
+}
+.table td {
+  width: 100px;
+}
+.tortoise_tooltip{
+  height: 50px;
+  width: 60px;
+  margin-top: 0px;
+  position: relative;
+  cursor: pointer;
+  border:2px solid #FFF;  color:#EEE;
+  background:#333
+}
+.hare-div span{
+  display:inline; position:absolute; 
+  border:2px solid #FFF;  color:#EEE;
+  background:#333
+}
 @keyframes cf3FadeInOut {
   /* distributing times evenly */
   0% {
