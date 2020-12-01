@@ -185,8 +185,8 @@ export class TortoiseHareComponent implements OnInit {
 
   simulation() {
     this.isShowButton = false;
-    this.torDistance = this.tMax;
-    this.hareDistance = this.tMin;
+    // this.torDistance = this.tMax;
+    // this.hareDistance = this.tMin;
     const Ttime = (50 - this.T1) / this.T2;
     const Htime = 50 / this.H1;
 
@@ -194,36 +194,37 @@ export class TortoiseHareComponent implements OnInit {
     this.hareImgSrc = 'assets/images/tortoise/runnig-hare.gif';
     this.torImgSrc = 'assets/images/tortoise/runnig-tortoise.gif';
     const tortoise = document.getElementById('tortoise');
-    const tortoiseTooltip = document.getElementById('tortoise_tooltip');
-    const hareTooltip = document.getElementById('hare_tooltip');
+  //  const tortoiseTooltip = document.getElementById('tortoise_tooltip');
+   // const hareTooltip = document.getElementById('hare_tooltip');
 
     const hare = document.getElementById('hare');
 
     tortoise.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
-    tortoiseTooltip.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
-    hareTooltip.style.transition = `left ${Htime}s cubic-bezier(0, 0, 1, 1)`;
+    hare.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
+   // tortoiseTooltip.style.transition = `left ${Ttime}s cubic-bezier(0, 0, 1, 1)`;
+   // hareTooltip.style.transition = `left ${Htime}s cubic-bezier(0, 0, 1, 1)`;
 
     tortoise.style.left = '500px';
-    tortoiseTooltip.style.left = '500px';
+  //  tortoiseTooltip.style.left = '500px';
     hare.style.left = '500px';
-    hareTooltip.style.left = '500px';
+   // hareTooltip.style.left = '500px';
 
-    const sss = setInterval(() => {
-      this.torDistance = this.torDistance + this.tStep;
-      this.hareDistance = this.hareDistance + this.tStep;
-      if (this.torDistance == 50) {
-        clearInterval(sss);
-      }
-    }, this.tStep * 100);
+    // const sss = setInterval(() => {
+    //   this.torDistance = this.torDistance + this.tStep;
+    //   this.hareDistance = this.hareDistance + this.tStep;
+    //   if (this.torDistance == 50) {
+    //     clearInterval(sss);
+    //   }
+    // }, this.tStep * 100);
 
     setTimeout(() => {
       this.isShowButton = true;
       this.isReset = true;
       this.torImgSrc = 'assets/images/tortoise/12.svg';
       tortoise.style.transition = ``;
-      tortoiseTooltip.style.transition = ``;
-      hareTooltip.style.transition = ``;
-      clearInterval(sss);
+  //    tortoiseTooltip.style.transition = ``;
+  //    hareTooltip.style.transition = ``;
+    //  clearInterval(sss);
     }, simTime * 1000);
 
     setTimeout(() => {
@@ -238,19 +239,19 @@ export class TortoiseHareComponent implements OnInit {
     this.torImgSrc = 'assets/images/tortoise/12.svg';
     this.hareImgSrc = 'assets/images/tortoise/4.svg';
     const tortoise = document.getElementById('tortoise');
-    const tortoiseTooltip = document.getElementById('tortoise_tooltip');
-    const hareTooltip = document.getElementById('hare_tooltip');
+   // const tortoiseTooltip = document.getElementById('tortoise_tooltip');
+  //  const hareTooltip = document.getElementById('hare_tooltip');
 
     const hare = document.getElementById('hare');
     tortoise.style.transition = ``;
-    tortoiseTooltip.style.transition = ``;
-    hareTooltip.style.transition = ``;
+  //  tortoiseTooltip.style.transition = ``;
+ //   hareTooltip.style.transition = ``;
     hare.style.transition = ``;
 
     tortoise.style.left = this.T1 * 10 + 'px';
-    tortoiseTooltip.style.left = this.T1 * 10 + 'px';
-    this.torDistance = this.tMax;
-    this.hareDistance = this.tMin;
+  //  tortoiseTooltip.style.left = this.T1 * 10 + 'px';
+    // this.torDistance = this.tMax;
+    // this.hareDistance = this.tMin;
 
     hare.style.left = '0px';
     this.isReset = false;
