@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { LinearEquationComponent } from './components/linear-equation/linear-equation.component';
+import { SafeHtmlPipe } from './pipe/safe-html.pipe';
 
 @NgModule({
-  declarations: [AppComponent, TortoiseHareComponent, LinearEquationComponent, HeaderComponent],
+  declarations: [AppComponent, TortoiseHareComponent, LinearEquationComponent, HeaderComponent, SafeHtmlPipe],
   imports: [
     BrowserModule,
     FormsModule,

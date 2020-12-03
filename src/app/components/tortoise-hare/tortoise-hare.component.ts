@@ -39,7 +39,7 @@ export class TortoiseHareComponent implements OnInit {
   dataStep1: any[] = [];
   dataStep2: any = {};
   i = 0;
-
+  isShowIntersection = false;
   isToggle = false;
   @ViewChild('torTooltip') torTooltip: ElementRef;
   constructor(private service: SwfServiceService) {
@@ -163,10 +163,18 @@ export class TortoiseHareComponent implements OnInit {
         fixed: true,
       }
     );
-    this.board.create('intersection', ['l1', 'l2', 0], {
-      name: 'intersection',
-      withLabel: true,
-    });
+    if (this.isShowIntersection) {
+      this.board.create('intersection', ['l1', 'l2', 0], {
+        name: 'Hare catches up with tortoise',
+        withLabel: true,
+      });
+    }else{
+      this.board.create('intersection', ['l1', 'l2', 0], {
+        name: 'Hare catches up with tortoise',
+        withLabel: false,
+      });
+  
+    }
 
     const tortoise = document.getElementById('tortoise');
     tortoise.style.left = this.T1 * 10 + 'px';
@@ -212,16 +220,16 @@ export class TortoiseHareComponent implements OnInit {
     hareTooltip.style.left = '500px';
 
     const sss = setInterval(() => {
-      this.torDistance = (this.torDistance + this.tStep) ;
-     // this.hareDistance = (this.hareDistance + this.tStep);
+      this.torDistance = this.torDistance + this.tStep;
+      // this.hareDistance = (this.hareDistance + this.tStep);
       if (this.torDistance == 50) {
         clearInterval(sss);
       }
     }, (simTime * 100) / 50);
 
     const sss2 = setInterval(() => {
-     // this.torDistance = (this.torDistance + this.tStep) ;
-      this.hareDistance = (this.hareDistance + this.tStep);
+      // this.torDistance = (this.torDistance + this.tStep) ;
+      this.hareDistance = this.hareDistance + this.tStep;
       if (this.torDistance == 50) {
         clearInterval(sss);
       }

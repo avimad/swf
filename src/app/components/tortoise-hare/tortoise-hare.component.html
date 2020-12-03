@@ -3,52 +3,72 @@
   <div class="container">
     <div class="left-bar">
       <div class="sec-bar">
-        <p>
-          Section:
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="!isStep1 && !isStep2  ? 'yellow' : ''"
-            class="fa fa-home"
-            aria-hidden="true"
-          ></i>
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="isStep1 ? 'yellow' : ''"
-            aria-hidden="true"
-            >|</i
-          >
-          <i
-            (click)="getStep2Data()"
-            [ngClass]="isStep2 ? 'yellow' : ''"
-            aria-hidden="true"
-            >||</i
-          >
-        </p>
+        <p>Section:</p>
+        <ul class="lst">
+          <li>
+            <a
+              (click)="getStep1Data()"
+              [ngClass]="
+                !isStep1 && !isStep2
+                  ? 'lst-icon lst-home active'
+                  : 'lst-icon lst-home '
+              "
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              (click)="getStep1Data()"
+              [ngClass]="isStep1 ? 'lst-icon lst-i active' : 'lst-icon lst-i'"
+              aria-hidden="true"
+            ></a>
+          </li>
+
+          <li>
+            <a
+              (click)="getStep2Data()"
+              [ngClass]="isStep2 ? 'lst-icon lst-ii active' : 'lst-icon lst-ii'"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
       </div>
       <div class="question-sec" *ngIf="i > 0">
-        <img src="assets/arrow.png" />
-        <p>Question:</p>
-        <i
-          (click)="nextPageData(k + 1)"
-          [ngClass]="i == k + 1 ? 'yellow' : ''"
-          *ngFor="
-            let d of dataStep1 | slice: 1:dataStep1.length - 1;
-            let k = index
-          "
-          >{{ k + 1 }}</i
-        >
-
-        <a (click)="prevData()" class="previous round">&#8249;</a>
-        <a (click)="nextData()" class="next round">&#8250;</a>
+        <img class="qsImg" src="../../../assets/images/Question.PNG" />
+        <ul class="lst">
+          <li
+            *ngFor="
+              let d of dataStep1 | slice: 1:dataStep1.length - 1;
+              let k = index
+            "
+          >
+            <a
+              (click)="nextPageData(k + 1)"
+              [ngClass]="
+                i == k + 1
+                  ? 'change lst-icon lst-' + (k + 1) + '  active'
+                  : 'change lst-icon lst-' + (k + 1)
+              "
+            ></a>
+          </li>
+        </ul>
+        <div class="lst">
+          <a (click)="prevData()" class="lst-icon lst-prev"></a>
+          <a (click)="nextData()" class="lst-icon lst-next"></a>
+        </div>
       </div>
       <div class="text-bar">
         <h2>{{ stageData.stage_title }}</h2>
-        <p class="scroll" [innerHTML]="stageData.stage_content"></p>
+        <p class="scroll" [innerHTML]="stageData.stage_content | safeHtml"></p>
         <p>
           Click <b *ngIf="i > 0">Next </b> <b *ngIf="i == 0">Continue </b>to
           <b *ngIf="i > 0">Continue </b> <b *ngIf="i == 0">begin </b>.
         </p>
-        <button class="btn btn-primary simulate-btn" (click)="nextData()" *ngIf="i > 0">
+        <button
+          class="btn btn-primary simulate-btn"
+          (click)="nextData()"
+          *ngIf="i > 0"
+        >
           <div class="simulate-initial">
             <img src="assets/GlobalImage/Next.png" />
           </div>
@@ -56,7 +76,11 @@
             <img src="assets/GlobalImage/Next_Rollover.png" />
           </div>
         </button>
-        <button class="btn btn-primary simulate-btn" (click)="nextData()" *ngIf="i == 0">
+        <button
+          class="btn btn-primary simulate-btn"
+          (click)="nextData()"
+          *ngIf="i == 0"
+        >
           <div class="simulate-initial">
             <img src="assets/GlobalImage/Continue.png" />
           </div>
@@ -70,12 +94,15 @@
       <div class="tabing-sec" [ngClass]="!isShowButton ? 'disbaled_div' : ''">
         <div class="tab">
           <button
-            class="tablinks active"
+            [ngClass]="isControl == true ? 'tablinks tabactive' : 'tablinks'"
             (click)="isControl = true; isTable = false"
           >
             Controls
           </button>
-          <button class="tablinks" (click)="isTable = true; isControl = false">
+          <button
+            [ngClass]="isTable == true ? 'tablinks tabactive' : 'tablinks'"
+            (click)="isTable = true; isControl = false"
+          >
             Tables
           </button>
         </div>
@@ -172,7 +199,10 @@
               <!-- <span id="f" style="font-weight: bold; color: red">{{ H1 }}</span> -->
             </div>
             <div class="checkbox-sec">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                (change)="isShowIntersection = !isShowIntersection ; t1Change()"
+              />
               <p>Show whether the hare oertakes the tortoise.</p>
             </div>
           </div>
@@ -197,13 +227,14 @@
                           <td colspan="3" style="background-color: #9dd9f2b0">
                             {{ d.tMax | number }}
                           </td>
-                          <td colspan="3" style="background-color: #ebababa3">{{ d.tStep }}</td>
+                          <td colspan="3" style="background-color: #ebababa3">
+                            {{ d.tStep }}
+                          </td>
                         </tr>
                       </table>
                     </div>
                   </td>
                 </tr>
-             
               </tbody>
             </table>
             <table class="table">
@@ -267,19 +298,20 @@
         </button>
         <div class="tortoise-div">
           <div>
-          <img class="tortoise" id="tortoise" [src]="torImgSrc" />
-          <span #torTooltip class="tortoise_tooltip" id="tortoise_tooltip">
-            <strong>{{torDistance | number}}</strong>
-          </span>
-        </div>
-        <div class="hare-div">
-          <img class="hare" id="hare" [src]="hareImgSrc" />
-          <span class="tortoise_tooltip" id="hare_tooltip">
-            <strong>{{hareDistance | number}}</strong>
-          </span>
+            <img class="tortoise" id="tortoise" [src]="torImgSrc" />
+            <span #torTooltip class="tortoise_tooltip" id="tortoise_tooltip">
+              <strong>{{ torDistance | number }}</strong>
+            </span>
+          </div>
+          <div class="hare-div">
+            <img class="hare" id="hare" [src]="hareImgSrc" />
+            <span class="tortoise_tooltip" id="hare_tooltip">
+              <strong>{{ hareDistance | number }}</strong>
+            </span>
+          </div>
         </div>
       </div>
     </div>
+    <!-- <img src="assets/race-pic.jpg"/> -->
   </div>
-  <!-- <img src="assets/race-pic.jpg"/> -->
 </div>
