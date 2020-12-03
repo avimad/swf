@@ -46,7 +46,7 @@
         <p class="scroll" [innerHTML]="stageData.stage_content"></p>
         <p>
           Click <b *ngIf="i > 0">Next </b> <b *ngIf="i == 0">Continue </b>to
-          continue.
+          <b *ngIf="i > 0">Continue </b> <b *ngIf="i == 0">begin </b>.
         </p>
         <button class="btn btn-primary simulate-btn" (click)="nextData()" *ngIf="i > 0">
           <div class="simulate-initial">
