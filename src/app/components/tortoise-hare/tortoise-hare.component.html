@@ -268,15 +268,15 @@
         <div class="tortoise-div">
           <div>
           <img class="tortoise" id="tortoise" [src]="torImgSrc" />
-          <!-- <span class="tortoise_tooltip" id="tortoise_tooltip">
-            <strong>{{torDistance}}</strong>
-          </span> -->
+          <span #torTooltip class="tortoise_tooltip" id="tortoise_tooltip">
+            <strong>{{torDistance | number}}</strong>
+          </span>
         </div>
         <div class="hare-div">
           <img class="hare" id="hare" [src]="hareImgSrc" />
-          <!-- <span class="tortoise_tooltip" id="hare_tooltip">
-            <strong>{{hareDistance}}</strong>
-          </span> -->
+          <span class="tortoise_tooltip" id="hare_tooltip">
+            <strong>{{hareDistance | number}}</strong>
+          </span>
         </div>
       </div>
     </div>

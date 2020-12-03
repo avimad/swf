@@ -153,7 +153,7 @@
   background:#333
 }
 .hare-div span{
-  display:inline; position:absolute; 
+  display:inline; position:relative; 
   border:2px solid #FFF;  color:#EEE;
   background:#333
 }
