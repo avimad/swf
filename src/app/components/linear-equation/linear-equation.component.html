@@ -3,49 +3,91 @@
   <div class="container">
     <div class="left-bar">
       <div class="sec-bar">
-        <p>
-          Section:
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="i == 0 ? 'yellow' : ''"
-            class="fa fa-home"
-            aria-hidden="true"
-          ></i>
-          <i
-            (click)="getStep1Data()"
-            [ngClass]="i == 1 ? 'yellow' : ''"
-            aria-hidden="true"
-            >|</i
-          >
-          <i
-            (click)="getStep2Data()"
-            [ngClass]="i == 2 ? 'yellow' : ''"
-            aria-hidden="true"
-            >||</i
-          >
-        </p>
-      </div>
-      <div class="question-sec">
-        <img src="assets/arrow.png" />
-        <p>Question:</p>
-        <i
-          (click)="nextPageData(k + 1)"
-          [ngClass]="i == k + 1 ? 'yellow' : ''"
-          *ngFor="
-            let d of dataStep1 | slice: 1:dataStep1.length - 1;
-            let k = index
-          "
-          >{{ k + 1 }}</i
-        >
+        <p>Section:</p>
+        <ul class="lst">
+          <li>
+            <a
+              (click)="getStep1Data()"
+              [ngClass]="
+                !isStep1 && !isStep2
+                  ? 'lst-icon lst-home active'
+                  : 'lst-icon lst-home '
+              "
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              (click)="getStep1Data()"
+              [ngClass]="isStep1 ? 'lst-icon lst-i active' : 'lst-icon lst-i'"
+              aria-hidden="true"
+            ></a>
+          </li>
 
-        <a (click)="prevData()" class="previous round">&#8249;</a>
-        <a (click)="nextData()" class="next round">&#8250;</a>
+          <li>
+            <a
+              (click)="getStep2Data()"
+              [ngClass]="isStep2 ? 'lst-icon lst-ii active' : 'lst-icon lst-ii'"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="question-sec" *ngIf="i > 0">
+        <img class="qsImg" src="../../../assets/images/Question.PNG" />
+        <ul class="lst">
+          <li
+            *ngFor="
+              let d of dataStep1 | slice: 1:dataStep1.length - 1;
+              let k = index
+            "
+          >
+            <a
+              (click)="nextPageData(k + 1)"
+              [ngClass]="
+                i == k + 1
+                  ? 'change lst-icon lst-' + (k + 1) + '  active'
+                  : 'change lst-icon lst-' + (k + 1)
+              "
+            ></a>
+          </li>
+        </ul>
+        <div class="lst">
+          <a (click)="prevData()" class="lst-icon lst-prev"></a>
+          <a (click)="nextData()" class="lst-icon lst-next"></a>
+        </div>
       </div>
       <div class="text-bar">
         <h2>{{ stageData.stage_title }}</h2>
-        <p class="scroll" [innerHTML]="stageData.stage_content"></p>
-        <p>Click <b>Next </b>to continue.</p>
-        <a (click)="nextData()">Next</a>
+        <p class="scroll" [innerHTML]="stageData.stage_content | safeHtml"></p>
+        <p>
+          Click <b *ngIf="i > 0">Next </b> <b *ngIf="i == 0">Continue </b>to
+          <b *ngIf="i > 0">Continue </b> <b *ngIf="i == 0">begin </b>.
+        </p>
+        <button
+          class="btn btn-primary simulate-btn"
+          (click)="nextData()"
+          *ngIf="i > 0"
+        >
+          <div class="simulate-initial">
+            <img src="assets/GlobalImage/Next.png" />
+          </div>
+          <div class="simulate-hover">
+            <img src="assets/GlobalImage/Next_Rollover.png" />
+          </div>
+        </button>
+        <button
+          class="btn btn-primary simulate-btn"
+          (click)="nextData()"
+          *ngIf="i == 0"
+        >
+          <div class="simulate-initial">
+            <img src="assets/GlobalImage/Continue.png" />
+          </div>
+          <div class="simulate-hover">
+            <img src="assets/GlobalImage/Continue_Hover.png" />
+          </div>
+        </button>
       </div>
     </div>
     <div class="right-sec modeling">
