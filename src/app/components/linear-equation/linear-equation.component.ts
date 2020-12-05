@@ -17,6 +17,8 @@ export class LinearEquationComponent implements OnInit {
   showSolution=false;
   condValid = false;
 
+  isStep1 = false;
+  isStep2 = false;
   mData = 1;
   bData = 3;
   xData = 0.00;
