@@ -13,6 +13,9 @@ export class LinearEquationComponent implements OnInit {
   stageData: ILinearData = {};
   dataStep1: any[] = [];
   dataStep2: any = {};
+  btnActive = "<";
+  showSolution=false;
+  condValid = false;
 
   mData = 1;
   bData = 3;
@@ -60,6 +63,7 @@ export class LinearEquationComponent implements OnInit {
   }
   ngOnInit(): void {
     this.t1Change();
+    this.checkConditionValid();
   }
   t1Change() {
     this.xData = this.mData;
@@ -116,5 +120,51 @@ export class LinearEquationComponent implements OnInit {
 
     // const tortoise = document.getElementById('tortoise');
     // tortoise.style.left = this.T1 * 10 + 'px';
+  }
+
+  selectedbtn(selectedType) {
+    switch(selectedType) {
+      case '<=': 
+        this.btnActive = '<=';
+        this.checkConditionValid();
+        break;
+      case '<':
+        this.btnActive = '<';
+        this.checkConditionValid();
+        break;
+      case '=':
+        this.btnActive = '='; 
+        this.checkConditionValid();
+        break;
+      case '>': 
+        this.btnActive = '>';
+        this.checkConditionValid();
+        break;
+      case '>=':
+        this.btnActive = '>=';
+        this.checkConditionValid();
+        break;
+    }
+  }
+
+  checkConditionValid() {
+    const val = ((this.mData * 0.00) + this.bData);
+    switch(this.btnActive) {
+      case '<=': 
+        (0.00 <= val) ? this.condValid= true : this.condValid = false;
+        break;
+      case '<':
+        (0.00 < val) ? this.condValid= true : this.condValid = false;
+        break;
+      case '=':
+        (0.00 == val) ? this.condValid= true : this.condValid = false;
+        break;
+      case '>': 
+        (0.00 > val) ? this.condValid= true : this.condValid = false;
+        break;
+      case '>=':
+        (0.00 >= val) ? this.condValid= true : this.condValid = false;
+        break;
+    }
   }
 }
