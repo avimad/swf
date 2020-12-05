@@ -80,7 +80,7 @@ export class LinearEquationComponent implements OnInit {
         eps: 0.1,
       },
     });
-
+    this.checkConditionValid();
     // this.board.create('point', [this.T1, this.T2], { name: 'A', size: 4 });
     //  this.board.create('point', [0, 5], { name: 'B', size: 4 });
     this.board.create(
