@@ -93,7 +93,14 @@
     <div class="right-sec modeling">
       <div class="tabing-sec">
         <div class="tabcontent">
-          y= {{ mData }} x + {{ bData }}
+          <p class="eq-label">y= {{ mData }} x + {{ bData }}</p>
+          <div class="btnContainer">
+            <button class="btn" [class.btn-active]="btnActive=='<='" title="Less than or Equal to" (click)="selectedbtn('<=')"><=</button>
+            <button class="btn" [class.btn-active]="btnActive=='<'" title="Less than" (click)="selectedbtn('<')"><</button>
+            <button class="btn" [class.btn-active]="btnActive=='='" title="Equal to" (click)="selectedbtn('=')">=</button>
+            <button class="btn" [class.btn-active]="btnActive=='>'" title="Greater than" (click)="selectedbtn('>')">></button>
+            <button class="btn" [class.btn-active]="btnActive=='>='" title="Greater than or Equal to" (click)="selectedbtn('>=')">>=</button>
+          </div>
           <div class="slidecontainer">
             <p><b> m</b></p>
 
@@ -145,6 +152,12 @@
               (change)="t1Change()"
             />
             <!-- <span id="f" style="font-weight: bold; color: red">{{ T2 }}</span> -->
+          </div>
+          <label class="label-control"><input type="checkbox" [(ngModel)]="showSolution">Show solution test</label>
+          <p class="eq-label" *ngIf="showSolution"> y= {{ mData }} x + {{ bData }}</p>
+          <div class="solutionContainer" *ngIf="showSolution">
+            <p>0.00 {{btnActive}} {{ mData }}(0.00) + {{ bData }}</p>
+            <p>0.00 {{btnActive}} {{ (mData * 0.00) + bData }}.00 <img *ngIf="condValid" style="width: 15px;" src="/assets/GlobalImage/tick.png" /><img style="width: 22px;" *ngIf="!condValid"src="/assets/GlobalImage/cross.png" /></p>
           </div>
         </div>
       </div>

@@ -1,3 +1,37 @@
 .input-text {
     width: 50px;
   }
+.btnContainer {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+.btnContainer .btn {
+  background: linear-gradient(60deg, #f7f4f4, #13c2f7);
+  margin: 0px 15px 0 15px;
+  font-weight: 700;
+  border-color: #4ecff6;
+  border-radius: 5px;
+  outline: none;
+}
+.btnContainer .btn-active {
+  background: linear-gradient(60deg, #f7f4f4, #33ca0d);
+}
+.label-control {
+  font-size: 18px;
+}
+.label-control input {
+  margin-top: 15px;
+}
+
+.solutionContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+.eq-label{
+  background: #f38a8a;
+  padding: 5px;
+  width: 87%;
+  padding-left: 15px;
+  margin: auto;
+}
