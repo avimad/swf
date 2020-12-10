@@ -16,6 +16,7 @@ export class LinearEquationComponent implements OnInit {
   btnActive = "<";
   showSolution=false;
   condValid = false;
+  mouseOver: boolean;
 
   isStep1 = false;
   isStep2 = false;
@@ -26,6 +27,7 @@ export class LinearEquationComponent implements OnInit {
   i = 0;
   constructor(private service: SwfServiceService) {
     this.getStep1Data();
+    this.mouseOver = false;
   }
   nextData() {
     this.i = this.i + 1;

@@ -35,3 +35,20 @@
   padding-left: 15px;
   margin: auto;
 }
+.simulate-btn {
+  border: none;
+}
+.graph-win-wrapper {
+  width: 100%;
+  display: flex;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+.graph-win-wrapper .graph-win {
+  width: 20%;
+  background: aliceblue;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border-right: 1px solid;
+}
