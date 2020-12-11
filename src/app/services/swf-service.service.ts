@@ -10,6 +10,9 @@ export class SwfServiceService {
   _STEP1URL = './assets/data/Step1.json';
   _STEP2URL = './assets/data/Step2.json';
 
+  Activity2_STEP1URL = './assets/data/Activity2_Step1.json';
+  Activity2_STEP2URL = './assets/data/Activity2_Step2.json';
+
   constructor(private http: HttpClient) {}
 
   getStep1Data() {
@@ -17,5 +20,12 @@ export class SwfServiceService {
   }
   getStep2Data() {
     return this.http.get(this._STEP2URL, { responseType: 'json' });
+  }
+
+  getAct2Step1Data() {
+    return this.http.get(this.Activity2_STEP1URL, { responseType: 'json' });
+  }
+  getAct2Step2Data() {
+    return this.http.get(this.Activity2_STEP2URL, { responseType: 'json' });
   }
 }

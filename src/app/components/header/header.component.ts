@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   instructionOpen: boolean = false;
   keyConceptOpen: boolean = false;
-  constructor() { }
+  header: string;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    var url = window.location.href.split("/");
+    var currentUrl = url[url.length - 1];
+    this.header = currentUrl === "MAT11NA_09_06_06_005" ? "Systems of Linear Inequalities" : "Modeling Linear System"
   }
   openInstruction() {
     this.instructionOpen=!this.instructionOpen;

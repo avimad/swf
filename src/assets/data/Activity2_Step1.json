@@ -1,0 +1,73 @@
+[
+	{
+		"problem_title": "",
+		"stage_title": "",
+        "stage_content": "A linear inequality describes a region of the coordinate plane that has a boundary line.<br><br>In this activity, you will explore the graphs of linear inequalities and systems of linear inequalities and learn when a point on the graph is a solution to an inequality or a set of inequalities.<br><br>The activity is divided into two sections:<br><ul><li><strong>Section I -</strong> Solving a Linear Inequality</li><li><strong>Section II -</strong> Solving a System of Linear Inequalities</li></ul>",
+		"button_top_text": "Click <strong>Continue</strong> to begin.",
+		"button_text": "Continue"
+	},
+	{
+		"problem_title": "<span class='space-10'></span>",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "In this section, you will explore the graphs of linear inequalities and observe how changes in the values of m and b and various inequality symbols affect the graphs. You will also learn to identify when a point on the graph is a solution to the linear inequality.<br><br> When you graph a linear inequality, you first draw its boundary line on the coordinate plane. The boundary line splits the coordinate plane into two regions, one whose points satisfy the inequality and the other whose points do not. The region that satisfies the inequality is usually shaded to show the solutions of the inequality. To create the boundary line, you set both sides of the inequality equal to each other and draw that line.<br><br> Set m = 2 and b = 0 by using the sliders or by typing the values in the input boxes. Finally, click the = button to graph the line y = 2x. <br><br> What is the shape of this function? <br><br><input id=\"text\" type=\"text\"/></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Next, click the <Strong>></strong> button to graph the linear inequality y > 2x. The line y = 2x is the boundary line for this inequality. <br><br> Is the boundary line of this inequality solid or dashed? <br><br> <input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+        "stage_content": "Now, vary the inequality symbol from <strong>></strong> to <strong>>=, < </strong> and <strong><=</strong> by clicking the appropriate inequality buttons.<br> <br>Is the boundary line solid or dashed when y >= 2x? <br><br><input type=\"text\"></input> <br><br> Is the boundary line solid or dashed when y < 2x? <br><br> <input type=\"text\"> <br><br> Is the boundary line solid or dashed when y <= 2x? <br><br> <input type=\"text\"></input> <br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Now,set m = 4 and b = -7 by using the sliders or by typing the values in the input boxes. Next, click the <strong>> </strong> button. Then, click the <strong>Show solution test</strong> check box. Finally, move the test point around the grid area to find the solution(s) of the inequality.<br<br> Does the point (2,-2) satisfy the inequality?<br><br><input type=\"text\"></input><br><br>Does the point (-2,2) satisfy the inequality?<br><br><input type=\"text\"></input><br><br> Are the points on the boundary line part of the solution?<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Now, set m = -5 and b = 2 by using the sliders or by typing the values in the input boxes. next, click the >= button. Make sure that the <strong>Show solution test</strong> check box is selected. Move the test point around the grid area to find the solution(s) of the inequality.<br><br>Are the points on the boundary line part of the solution?<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Keeping m = -5 and b = 2, vary the inequality symbol from >= to < and <= by clicking the appropriate inequality buttons. Then, click the <strong>Show shaded region</strong> check box. Finally, move the test point around the grid area to find the solution(s) of the inequality.<br><br>Are the points on the boundary line part of the solution when<br>y<-5x+2?<br><br><input type=\"text\"></input><br><br>Is the region above or below the boundary line shaded when <br> y < -5x + 2?<br><br><input type=\"text\"></input><br><br>Are all the points in the shaded region part of the solution when <br> y < -5x + 2?<br><br><input type=\"text\"></input><br><br>Is the region above or below the boundary line shaded when<br>y <= -5x + 2?<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Now, for the same values of m and b, change the inequality symbol from <= to >= by clicking the appropriate inequality button.<br><br> Is the region above or below the boundary line shaded when <br> y >= -5x + 2?<br><br><input type=\"text\"></input><br><br>Next, click the appropriate inequality button to change the inequality symbol from >= to < and then to >.<br><br> Which region is shaded when <br>y< -5x +2?<br><br><input type=\"text\"></input><br><br>Which region is shaded when <br>y > -5x +2?<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a Linear Inequality",
+		"stage_content": "Set the inequalities y> -x + 3 and y < -2x + 4 by using the sliders or by typing the values in the input boxes.<br><br> Which of the inequalities has a solution at (0,0)?<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	}
+]

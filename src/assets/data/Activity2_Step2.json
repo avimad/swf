@@ -1,0 +1,50 @@
+[
+	{
+		"problem_title": "<span class='space-10'></span>",
+		"stage_title": "Solving a System of Linear Inequalities",
+		"stage_content": "In this section, you will explore systems of linear inequalities and determine their solutions.<br><br>Select the first radio button and set m = 2 and b = 1 by using the sliders or by typing the values in the input boxes. Next, click the >= button.<br><br> Now, select the second radio button and set m = -1 and b = 2. Next, click the < button. Click the <strong>Show solution test </strong> check box. Move the test point around the grid area to find the solution(s) of the inequality. Click the <strong>Show shaded region </strong> check box.<br><br> How many shaded regions are there?<br><br><input type=\"text\"></input><br><br>Does the point (4,4) lie in any of the shaded regions?<br><br><input type=\"text\"></input><br><br> Does the point (4,4) satisfy either inequality? Substitute the values into both of the inequalities and verify your answer.<br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a System of Linear Inequalities",
+		"stage_content": "Make sure that the <strong>Show solution test</strong> check box is selected. Move the test point on the graph to (2,-2).<br><br> Does the point (2,-2) lie in the red shaded region or blue shaded region?<br><br><input type=\"text\"></input><br><br> The point (2,-2) is a solution to which of the inequalities? <br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a System of Linear Inequalities",
+        "stage_content": "Now, move the test point to (-2,6). <br><br> Does the point (-2, 6) lie in the red or blue shaded region? <br><br><input type=\"text\"></input><br><br> The point (-2, 6) satisfies which of the inequalities: y >= 2x + 1 or y < -x + 2? Insert the text \"greater than or equal to\" for the symbol (>=), or \"less than or equal to\" for the symbol (<=), if necessary. <br><br><input type=\"text\"></input><br><br> ",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a System of Linear Inequalities",
+		"stage_content": "Now, move the test point on the graph to (-4, 2). <br><br> Does the point (-4, 2) lie in the purple shaded region? <br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a System of Linear Inequalities",
+		"stage_content": "Now, move the test point along the boundary line of y >= 2x + 1. <br><br> Do all the point on the boundary line of y >= 2x + 1 form a solution to the system of inequalities? <br><br><input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	},
+	{
+		"problem_title": "",
+		"stage_title": "Solving a System of Linear Inequalities",
+		"stage_content": "Now change the inequality symbols for both inequalities so that the point (4, 4) is a solution to the system of inequalities. Insert the text \"greater than or equal to\" for the symbol (>=), or \"less than or equal to\" for the symbol (<), if necessary. <br><br> Which two inequalities did you choose? <br><br> Inequality 1: <input type=\"text\"></input><br><br> Inequality 2: <input type=\"text\"></input><br><br>",
+		"button_top_text": "Click <strong>Next</strong> to continue.",
+		"button_text": "Next",
+		"opratingButtons": []
+	}
+]

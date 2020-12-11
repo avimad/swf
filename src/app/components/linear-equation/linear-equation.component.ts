@@ -16,6 +16,8 @@ export class LinearEquationComponent implements OnInit {
   btnActive = "<";
   showSolution=false;
   condValid = false;
+  mouseOver: boolean;
+  showShadedRegion: boolean = false;
 
   isStep1 = false;
   isStep2 = false;
@@ -26,6 +28,7 @@ export class LinearEquationComponent implements OnInit {
   i = 0;
   constructor(private service: SwfServiceService) {
     this.getStep1Data();
+    this.mouseOver = false;
   }
   nextData() {
     this.i = this.i + 1;
@@ -40,7 +43,7 @@ export class LinearEquationComponent implements OnInit {
     this.stageData = this.dataStep1[this.i];
   }
   getStep1Data() {
-    this.service.getStep1Data().subscribe((res) => {
+    this.service.getAct2Step1Data().subscribe((res) => {
       this.dataStep1 = res as [];
       console.log(this.dataStep1);
       this.i = 0;
@@ -48,7 +51,7 @@ export class LinearEquationComponent implements OnInit {
     });
   }
   getStep2Data() {
-    this.service.getStep2Data().subscribe((res) => {
+    this.service.getAct2Step2Data().subscribe((res) => {
       this.dataStep1 = res as [];
       this.i = 0;
       this.stageData = this.dataStep1[this.i];
