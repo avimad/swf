@@ -76,15 +76,15 @@
           <div class="btnContainer">
             <button class="btn" [class.btn-active]="btnActive=='<='" title="Less than or Equal to"
               (click)="selectedbtn('<=')">
-              <=< /button>
+              &#62;=</button>
                 <button class="btn" [class.btn-active]="btnActive=='<'" title="Less than" (click)="selectedbtn('<')">
-                  << /button>
+                  &#62;</button>
                     <button class="btn" [class.btn-active]="btnActive=='='" title="Equal to"
                       (click)="selectedbtn('=')">=</button>
                     <button class="btn" [class.btn-active]="btnActive=='>'" title="Greater than"
-                      (click)="selectedbtn('>')">></button>
+                      (click)="selectedbtn('>')">&#62;</button>
                     <button class="btn" [class.btn-active]="btnActive=='>='" title="Greater than or Equal to"
-                      (click)="selectedbtn('>=')">>=</button>
+                      (click)="selectedbtn('>=')">&#62;</button>
           </div>
           <div class="slidecontainer">
             <p><b> m</b></p>
@@ -108,12 +108,15 @@
           <p class="eq-label" *ngIf="showSolution"> y= {{ mData }} x + {{ bData }}</p>
           <div class="solutionContainer" *ngIf="showSolution">
             <p>0.00 {{btnActive}} {{ mData }}(0.00) + {{ bData }}</p>
-            <p>0.00 {{btnActive}} {{ (mData * 0.00) + bData }}.00 <img *ngIf="condValid" style="width: 15px;"
-                src="/assets/GlobalImage/tick.png" /><img style="width: 22px;" *ngIf="!condValid"
-                src="/assets/GlobalImage/cross.png" /></p>
+            <p>
+              0.00 {{btnActive}} {{ (mData * 0.00) + bData }}.00 
+              <img *ngIf="condValid" style="width: 15px;" src="/assets/GlobalImage/tick.png" />
+              <img style="width: 22px;" *ngIf="!condValid" src="/assets/GlobalImage/cross.png" />
+            </p>
           </div>
-          <label class="label-control" style="display: block;" [class.margin-top-120]="!showSolution"><input
-              type="checkbox" [(ngModel)]="showShadedRegion">Show shaded region</label>
+          <label class="label-control" style="display: block;" [class.margin-top-120]="!showSolution">
+            <input type="checkbox" [(ngModel)]="showShadedRegion">Show shaded region
+          </label>
         </div>
       </div>
       <div class="graph-sec">
