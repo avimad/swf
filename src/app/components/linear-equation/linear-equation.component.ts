@@ -17,6 +17,7 @@ export class LinearEquationComponent implements OnInit {
   showSolution=false;
   condValid = false;
   mouseOver: boolean;
+  showShadedRegion: boolean = false;
 
   isStep1 = false;
   isStep2 = false;

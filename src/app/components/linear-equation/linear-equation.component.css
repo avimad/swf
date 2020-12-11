@@ -52,3 +52,13 @@
   font-weight: bold;
   border-right: 1px solid;
 }
+.margin-top-120 {
+  margin-top: 120px;
+}
+.graph-sol {
+  height: 56px;
+  border: 1px solid;
+  border-radius: 8px;
+  background: white;
+  margin-top: 10px;
+}

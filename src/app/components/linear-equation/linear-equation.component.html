@@ -94,7 +94,7 @@
     </div>
     <div class="right-sec modeling">
       <div class="tabing-sec">
-        <div class="tabcontent" style="height: 400px">
+        <div class="tabcontent" style="height: 430px">
           <p class="eq-label">y= {{ mData }} x + {{ bData }}</p>
           <div class="btnContainer">
             <button class="btn" [class.btn-active]="btnActive=='<='" title="Less than or Equal to" (click)="selectedbtn('<=')"><=</button>
@@ -161,6 +161,7 @@
             <p>0.00 {{btnActive}} {{ mData }}(0.00) + {{ bData }}</p>
             <p>0.00 {{btnActive}} {{ (mData * 0.00) + bData }}.00 <img *ngIf="condValid" style="width: 15px;" src="/assets/GlobalImage/tick.png" /><img style="width: 22px;" *ngIf="!condValid"src="/assets/GlobalImage/cross.png" /></p>
           </div>
+          <label class="label-control" style="display: block;" [class.margin-top-120]="!showSolution"><input type="checkbox" [(ngModel)]="showShadedRegion">Show shaded region</label>
         </div>
       </div>
       <div class="graph-sec">
@@ -177,6 +178,9 @@
               <div style="width: 50%;"><input type="number" style="width: inherit;" /> <div>y-Max</div></div>
             </div>
           </div>
+        </div>
+        <div class="graph-sol">
+          <p>(0.00, 0.00) is not a solution</p>
         </div>
       </div>
     </div>
