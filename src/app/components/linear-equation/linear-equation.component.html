@@ -1,7 +1,7 @@
 <!-- Header -->
 <div class="content-sec">
-  <div class="container">
-    <div class="left-bar">
+  <div class="container" style="min-height: 80vh; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+    <div class="left-bar" style="margin-left: 10px;">
       <div class="sec-bar">
         <p>Section:</p>
         <ul class="lst">
@@ -68,11 +68,12 @@
           class="btn btn-primary simulate-btn"
           (click)="nextData()"
           *ngIf="i > 0"
+          (mouseover)="mouseOver=true" (mouseout)="mouseOver=false"
         >
-          <div class="simulate-initial">
+          <div class="simulate-initial" *ngIf="!mouseOver">
             <img src="assets/GlobalImage/Next.png" />
           </div>
-          <div class="simulate-hover">
+          <div class="simulate-hover" *ngIf="mouseOver">
             <img src="assets/GlobalImage/Next_Rollover.png" />
           </div>
         </button>
@@ -80,11 +81,12 @@
           class="btn btn-primary simulate-btn"
           (click)="nextData()"
           *ngIf="i == 0"
+          (mouseover)="mouseOver=true" (mouseout)="mouseOver=false"
         >
-          <div class="simulate-initial">
+          <div class="simulate-initial" *ngIf="!mouseOver">
             <img src="assets/GlobalImage/Continue.png" />
           </div>
-          <div class="simulate-hover">
+          <div class="simulate-hover" *ngIf="mouseOver">
             <img src="assets/GlobalImage/Continue_Hover.png" />
           </div>
         </button>
@@ -92,7 +94,7 @@
     </div>
     <div class="right-sec modeling">
       <div class="tabing-sec">
-        <div class="tabcontent">
+        <div class="tabcontent" style="height: 430px">
           <p class="eq-label">y= {{ mData }} x + {{ bData }}</p>
           <div class="btnContainer">
             <button class="btn" [class.btn-active]="btnActive=='<='" title="Less than or Equal to" (click)="selectedbtn('<=')"><=</button>
@@ -159,10 +161,27 @@
             <p>0.00 {{btnActive}} {{ mData }}(0.00) + {{ bData }}</p>
             <p>0.00 {{btnActive}} {{ (mData * 0.00) + bData }}.00 <img *ngIf="condValid" style="width: 15px;" src="/assets/GlobalImage/tick.png" /><img style="width: 22px;" *ngIf="!condValid"src="/assets/GlobalImage/cross.png" /></p>
           </div>
+          <label class="label-control" style="display: block;" [class.margin-top-120]="!showSolution"><input type="checkbox" [(ngModel)]="showShadedRegion">Show shaded region</label>
         </div>
       </div>
       <div class="graph-sec">
         <div id="box" class="jxgbox" style="width: 300px; height: 300px"></div>
+        <div class="graph-win-wrapper">
+          <div class="graph-win">Graph Window</div>
+          <div style="width: 80%;display: flex;">
+            <div style="width: 50%;display: flex;padding: 4px;border-right: 1px solid;background: white;">
+              <div style="width: 50%;"><input type="number" style="width: inherit;" /> <div>x-Min</div></div>
+              <div style="width: 50%;"><input type="number" style="width: inherit;" /> <div>x-Max</div></div>
+            </div>
+            <div style="width: 50%;display: flex;padding: 4px;background: white;">
+              <div style="width: 50%;"><input type="number" style="width: inherit;" /> <div>y-Min</div></div>
+              <div style="width: 50%;"><input type="number" style="width: inherit;" /> <div>y-Max</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="graph-sol">
+          <p>(0.00, 0.00) is not a solution</p>
+        </div>
       </div>
     </div>
     <!-- <img src="assets/race-pic.jpg"/> -->
